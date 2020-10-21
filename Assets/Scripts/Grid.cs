@@ -29,14 +29,14 @@ public class Grid
                 count++;
             }
         }
-
+        
         count = 0;
-        for (int x = 0; x < gridArray.GetLength(0); x++ ) {
-            for (int y = 0; y < gridArray.GetLength(1); y++ ) {
-                debugTextArray[x, y] = UtilsClass.CreateWorldText(letters[count], null, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f, 20, Color.white, TextAnchor.MiddleCenter);
+        for (int row = 0; row < gridArray.GetLength(0); row++ ) {
+            for (int col = 0; col < gridArray.GetLength(1); col++ ) {
+                debugTextArray[row, col] = UtilsClass.CreateWorldText(letters[count], null, GetWorldPosition(row, col) + new Vector3(cellSize, cellSize) * 0.5f, 20, Color.white, TextAnchor.MiddleCenter);
                 count++;
-                Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 10000f);
-                Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 10000f);
+                Debug.DrawLine(GetWorldPosition(row, col), GetWorldPosition(row, col + 1), Color.white, 10000f);
+                Debug.DrawLine(GetWorldPosition(row, col), GetWorldPosition(row + 1, col), Color.white, 10000f);
             }
         }
         Debug.DrawLine(GetWorldPosition(0, rows), GetWorldPosition(columns, rows), Color.white, 10000f);
