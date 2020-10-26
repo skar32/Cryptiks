@@ -10,10 +10,10 @@ public class GridManager : MonoBehaviour
     public GameObject[] columnTiles;
     public GameObject[] rowTiles;
     public GameObject rows, columns;
-    private bool mouseClicked = false;
-    private bool dragging = false;
+    private bool mouseClicked = false; // checks if the left mouse button is down
+    private bool dragging = false; // checks if the mouse is being dragged
 
-    void Awake() 
+    void Awake() // initialize both the column and row grids with the array of letters inputted in the inspector
     {
         int count = 0;
         foreach (GameObject tile in columnTiles) {
@@ -44,12 +44,14 @@ public class GridManager : MonoBehaviour
             mouseClicked = false;
         }
         
+        // if the left mouse button is down, is being dragged to the right/left, and is not shifting a column/row already, change the grid to the row grid
         if (mouseClicked && !dragging && (Input.GetAxis("Mouse X") > 0.2 || Input.GetAxis("Mouse X") < -0.2)) {
             rows.GetComponent<CanvasGroup>().alpha = 1f;
             rows.GetComponent<CanvasGroup>().blocksRaycasts = true;
             columns.GetComponent<CanvasGroup>().alpha = 0f;
             columns.GetComponent<CanvasGroup>().blocksRaycasts = false;
             dragging = true;
+        // if the left mouse button is down, is being dragged upward/downward, and is not shifting a column/row already, change the grid to the column grid
         } else if (mouseClicked && !dragging && (Input.GetAxis("Mouse Y") > 0.2 || Input.GetAxis("Mouse Y") < -0.2)) {
             rows.GetComponent<CanvasGroup>().alpha = 0f;
             rows.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -59,9 +61,9 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void updateRowTiles() 
+    public void updateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
     {
-        dragging = false;
+        dragging = false; 
 
         Collider2D[] results;
         TMP_Text rowTileText = null;
@@ -104,7 +106,7 @@ public class GridManager : MonoBehaviour
         rowTileText.text = colTileText.text;
     }
 
-    public void updateColumnTiles() 
+    public void updateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
     {
         dragging = false;
         
@@ -149,7 +151,7 @@ public class GridManager : MonoBehaviour
         colTileText.text = rowTileText.text;
     }
 
-    private void findText(Collider2D[] results, out TMP_Text rowText, out TMP_Text colText) // helper method for updating tile text after drag end
+    private void findText(Collider2D[] results, out TMP_Text rowText, out TMP_Text colText) // helper method for updating tile text after mouse drag ends and a shift occurs
     { 
         rowText = null;
         colText = null;

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PuzzlesTesting/ARareOccurrence.unity
-    guid: 0f809772544c41a48921f4fe3d26586b
+    path: Assets/Scenes/Soham Kar/ScrollMechanicTest.unity
+    guid: 2ee08d456031ad34b85f6f64ea0a190d
   m_configObjects: {}
