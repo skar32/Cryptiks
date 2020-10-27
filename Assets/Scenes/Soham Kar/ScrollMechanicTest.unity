@@ -128,6 +128,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239824791200, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 1852771984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &97334990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97334989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &97334993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,6 +222,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639448313684, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 1507213353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &170127851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170127850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &170127854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,7 +265,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239775748538, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 3886814123416316751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &294978636
+--- !u!114 &294978638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+  m_PrefabInstance: {fileID: 3886814123416316751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294978635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &294978639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,31 +285,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 294978635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateColumnTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 338412014}
+  OtherScrollRect2: {fileID: 1219330766}
+  OtherScrollRect3: {fileID: 631077861}
 --- !u!1 &298341338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639484540094, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 1507213353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &298341339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298341338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &298341340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298341338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &298341342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,7 +444,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639531893668, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 8108050638938947881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &338412012
+--- !u!114 &338412013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,26 +453,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 338412011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateRowTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 294978638}
+  OtherScrollRect2: {fileID: 1570478549}
+  OtherScrollRect3: {fileID: 1218486305}
+--- !u!114 &338412014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+  m_PrefabInstance: {fileID: 8108050638938947881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338412011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &341055602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,6 +510,14 @@ PrefabInstance:
     - target: {fileID: 7102402238440305773, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.8365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Horizontal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Vertical
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
@@ -697,11 +751,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 200, y: 200}
   m_EdgeRadius: 0
+--- !u!114 &563025308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563025303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &602394237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639448313684, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 8108050638938947881}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &602394238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602394237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &602394241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -738,7 +816,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639531893668, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 2087775138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &631077859
+--- !u!114 &631077861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+  m_PrefabInstance: {fileID: 2087775138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631077858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &631077862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,31 +836,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 631077858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateRowTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 294978638}
+  OtherScrollRect2: {fileID: 1570478549}
+  OtherScrollRect3: {fileID: 1218486305}
 --- !u!1 &862965051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402238334462825, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 341055602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &862965052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862965051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &862965055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -922,13 +1011,23 @@ MonoBehaviour:
   - {fileID: 1754900297}
   - {fileID: 2079760963}
   - {fileID: 862965051}
-  rows: {fileID: 167754213}
-  columns: {fileID: 1001763315}
 --- !u!1 &1138604964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639448313684, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 2087775138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1138604965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138604964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1138604968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -960,6 +1059,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050640706845047, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 2087775138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1169888382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169888381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1169888385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -991,6 +1102,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639484540094, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 2087775138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1176244652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176244651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1176244655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1022,7 +1145,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239775748538, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 341055602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1218486303
+--- !u!114 &1218486305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+  m_PrefabInstance: {fileID: 341055602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218486302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1218486306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1031,32 +1165,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218486302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateColumnTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 338412014}
+  OtherScrollRect2: {fileID: 1219330766}
+  OtherScrollRect3: {fileID: 631077861}
 --- !u!1 &1219330763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050639531893668, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 1507213353}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1219330764
+--- !u!114 &1219330766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+  m_PrefabInstance: {fileID: 1507213353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219330763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1219330767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1065,26 +1198,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219330763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateRowTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 294978638}
+  OtherScrollRect2: {fileID: 1570478549}
+  OtherScrollRect3: {fileID: 1218486305}
 --- !u!1 &1257335158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1217,7 @@ GameObject:
   - component: {fileID: 1257335161}
   - component: {fileID: 1257335160}
   - component: {fileID: 1257335159}
+  - component: {fileID: 1257335162}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1168,11 +1290,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1257335162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257335158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &1384923227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402238334462825, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 1852771984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1384923228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384923227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1384923231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1362,7 +1512,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239775748538, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 1852771984}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1570478547
+--- !u!114 &1570478549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+  m_PrefabInstance: {fileID: 1852771984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570478546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1570478550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1371,31 +1532,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570478546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fe639f2b9935444a9893558a3a7a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1066850836}
-          m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
-          m_MethodName: updateColumnTiles
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  rows: {fileID: 167754213}
+  columns: {fileID: 1001763315}
+  OtherScrollRect1: {fileID: 338412014}
+  OtherScrollRect2: {fileID: 1219330766}
+  OtherScrollRect3: {fileID: 631077861}
 --- !u!1 &1754900297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239824791200, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 341055602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754900298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754900297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1754900301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1460,6 +1621,14 @@ PrefabInstance:
     - target: {fileID: 7102402238440305773, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.8365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Horizontal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Vertical
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
@@ -1700,6 +1869,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239861022026, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 1852771984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2007466615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007466614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2007466618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1731,6 +1912,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239861022026, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 341055602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079760964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079760963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2079760967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1936,6 +2129,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050640706845047, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 1507213353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110624291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110624290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2110624294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1967,6 +2172,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8108050640706845047, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
   m_PrefabInstance: {fileID: 8108050638938947881}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128640095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128640094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2128640098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2031,6 +2248,14 @@ PrefabInstance:
     - target: {fileID: 7102402238440305773, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.8365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Horizontal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_Vertical
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
@@ -2167,6 +2392,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402238334462825, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 3886814123416316751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6296157549266599975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296157549266599974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &6296157549266599976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2198,6 +2435,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7102402239861022026, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
   m_PrefabInstance: {fileID: 3886814123416316751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6296157549853521414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296157549853521413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &6296157549853521416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2255,6 +2504,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 200, y: 200}
   m_EdgeRadius: 0
+--- !u!114 &6296157549880241649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296157549880241647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0155d54d3a2f548935a3ca845afd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6296157549971823350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7102402239775748537, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
