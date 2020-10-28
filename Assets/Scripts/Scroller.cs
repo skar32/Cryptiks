@@ -130,10 +130,13 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         if (scrollOther)
         {
             if (scroll1) {
+            	Debug.Log("scrolling");
                 OtherScrollRect1.OnDrag(eventData);
             } else if (scroll2) {
+            	Debug.Log("scrolling");
                 OtherScrollRect2.OnDrag(eventData);
             } else if (scroll3) {
+            	Debug.Log("scrolling");
                 OtherScrollRect3.OnDrag(eventData);
             }
             
