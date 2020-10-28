@@ -61,15 +61,15 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                 columns.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
                 if (500 < yPos && yPos < 675) { // if row 1 should be scrolled
-                    OtherScrollRect1.OnBeginDrag(eventData);
+                    ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row1");
                     scroll1 = true;
                 } else if (325 < yPos && yPos < 500) { // if row 2 should be scrolled
-                    OtherScrollRect2.OnBeginDrag(eventData);
+                     ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row2");
                     scroll2 = true;
                 } else if (165 < yPos && yPos < 325) { // if row 3 should be scrolled
-                    OtherScrollRect3.OnBeginDrag(eventData);
+                     ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row3");
                     scroll3 = true;
                 }
@@ -88,15 +88,15 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             columns.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
             if (180 < xPos && xPos < 360) { // if col 1 should be scrolled
-                OtherScrollRect1.OnBeginDrag(eventData);
+                ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col1");
                 scroll1 = true;
             } else if (360 < xPos && xPos < 540) { // if col 2 should be scrolled 
-                OtherScrollRect2.OnBeginDrag(eventData);
+                ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col2");
                 scroll2 = true;
             } else if (540 < xPos && xPos < 690) { // if col 3 should be scrolled
-                OtherScrollRect3.OnBeginDrag(eventData);
+                ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col3");
                 scroll3 = true;
             }
@@ -111,13 +111,13 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             _myScrollRect.enabled = true;
 
             if (scroll1) {
-                OtherScrollRect1.OnEndDrag(eventData);
+                ExecuteEvents.Execute<IEndDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.endDragHandler);
                 scroll1 = false;
             } else if (scroll2) {
-                OtherScrollRect2.OnEndDrag(eventData);
+                ExecuteEvents.Execute<IEndDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.endDragHandler);
                 scroll2 = false;
             } else if (scroll3) {
-                OtherScrollRect3.OnEndDrag(eventData);
+                ExecuteEvents.Execute<IEndDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.endDragHandler);
                 scroll3 = false;
             }
         }
@@ -130,13 +130,13 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         if (scrollOther)
         {
             if (scroll1) {
-            	Debug.Log("scrolling");
+            	//Debug.Log("scrolling");
                 OtherScrollRect1.OnDrag(eventData);
             } else if (scroll2) {
-            	Debug.Log("scrolling");
+            	//Debug.Log("scrolling");
                 OtherScrollRect2.OnDrag(eventData);
             } else if (scroll3) {
-            	Debug.Log("scrolling");
+            	//Debug.Log("scrolling");
                 OtherScrollRect3.OnDrag(eventData);
             }
             
