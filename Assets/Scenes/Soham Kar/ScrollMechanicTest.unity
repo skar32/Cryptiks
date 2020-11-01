@@ -519,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Vertical
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
       value: 0
@@ -1476,6 +1480,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3906229
       objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: infiniteScrollingEndSpacing
       value: 0
@@ -1629,6 +1637,10 @@ PrefabInstance:
     - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_Vertical
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_MovementType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
@@ -2077,6 +2089,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3906229
       objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: onPanelChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -2256,6 +2272,10 @@ PrefabInstance:
     - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_Vertical
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748518, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: m_MovementType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: automaticLayoutSpacing
@@ -2648,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3906229
       objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893688, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: infiniteScrollingEndSpacing
       value: 0
@@ -2655,6 +2679,10 @@ PrefabInstance:
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: automaticLayoutSpacing
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: startingPanel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8108050640706845047, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: m_Name
