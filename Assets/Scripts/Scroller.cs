@@ -8,12 +8,14 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 {
     public GameObject rows, columns;
     public ScrollRect OtherScrollRect1, OtherScrollRect2, OtherScrollRect3;
-    public static GameObject currDraggedTile;
+    public GameObject upperLeft, middleLeft, lowerLeft, upperMiddle, middleMiddle, lowerMiddle, upperRight, middleRight, lowerRight;
+    public static GameObject currColRow;
     private ScrollRect _myScrollRect;
     private bool scrollOther; //This tracks if the other one should be scrolling instead of the current one.
     private bool scrollOtherHorizontally; //This tracks whether the other one should scroll horizontally or vertically.
     private bool scroll1, scroll2, scroll3;
     private bool word1;
+    public HighlightingManager highlightingScript;
 
     void Awake()
     {
@@ -40,8 +42,8 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         float horizontal = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
         float vertical = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
 
-        float xPos = eventData.pressPosition.x;
-        float yPos = eventData.pressPosition.y;
+        float xPos = eventData.pressPosition.x/Screen.width;
+        float yPos = eventData.pressPosition.y/Screen.height;
 
         // Debug.Log("X: " + xPos);
         // Debug.Log("Y: " + yPos);
@@ -60,15 +62,15 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                 columns.GetComponent<CanvasGroup>().alpha = 0f;
                 columns.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
-                if (500 < yPos && yPos < 675) { // if row 1 should be scrolled
+                if (0.6 < yPos && yPos < 1) { // if row 1 should be scrolled
                     ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row1");
                     scroll1 = true;
-                } else if (325 < yPos && yPos < 500) { // if row 2 should be scrolled
+                } else if (0.4 < yPos && yPos < 0.6) { // if row 2 should be scrolled
                      ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row2");
                     scroll2 = true;
-                } else if (165 < yPos && yPos < 325) { // if row 3 should be scrolled
+                } else if (0 < yPos && yPos < 0.4) { // if row 3 should be scrolled
                      ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row3");
                     scroll3 = true;
@@ -87,15 +89,15 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             columns.GetComponent<CanvasGroup>().alpha = 1f;
             columns.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
-            if (180 < xPos && xPos < 360) { // if col 1 should be scrolled
+            if (0.2 < xPos && xPos < 0.4) { // if col 1 should be scrolled
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col1");
                 scroll1 = true;
-            } else if (360 < xPos && xPos < 540) { // if col 2 should be scrolled 
+            } else if (0.4 < xPos && xPos < 0.6) { // if col 2 should be scrolled 
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col2");
                 scroll2 = true;
-            } else if (540 < xPos && xPos < 690) { // if col 3 should be scrolled
+            } else if (0.6 < xPos && xPos < 0.8) { // if col 3 should be scrolled
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col3");
                 scroll3 = true;
@@ -122,7 +124,13 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             }
         }
 
-        StartCoroutine(CheckForWords());
+        if (rows.GetComponent<CanvasGroup>().alpha == 0f) {
+            updateRowTiles();
+        } else if (columns.GetComponent<CanvasGroup>().alpha == 0f) {
+            updateColumnTiles();
+        }
+
+        StartCoroutine(highlightingScript.CheckForWords());
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -149,39 +157,39 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         TMP_Text rowTileText = null;
         TMP_Text colTileText = null;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 585), 50); // upper left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperLeft.transform.position.x, upperLeft.transform.position.y), 50); // upper left tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 585), 50); // upper middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperMiddle.transform.position.x, upperMiddle.transform.position.y), 50); // upper middle tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 585), 50); // upper right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperRight.transform.position.x, upperRight.transform.position.y), 50); // upper right tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 420), 50); // middle left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleLeft.transform.position.x, middleLeft.transform.position.y), 50); // middle left tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 420), 50); // middle middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleMiddle.transform.position.x, middleMiddle.transform.position.y), 50); // middle middle tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 420), 50); // middle right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleRight.transform.position.x, middleRight.transform.position.y), 50); // middle right tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 250), 50); // lower left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerLeft.transform.position.x, lowerLeft.transform.position.y), 50); // lower left tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 250), 50); // lower middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerMiddle.transform.position.x, lowerMiddle.transform.position.y), 50); // lower middle tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 250), 50); // lower right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerRight.transform.position.x, lowerRight.transform.position.y), 50); // lower right tile
         findText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
     }
@@ -192,39 +200,39 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         TMP_Text rowTileText = null;
         TMP_Text colTileText = null;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 585), 50); // upper left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperLeft.transform.position.x, upperLeft.transform.position.y), 50); // upper left tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 585), 50); // upper middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperMiddle.transform.position.x, upperMiddle.transform.position.y), 50); // upper middle tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 585), 50); // upper right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(upperRight.transform.position.x, upperRight.transform.position.y), 50); // upper right tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 420), 50); // middle left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleLeft.transform.position.x, middleLeft.transform.position.y), 50); // middle left tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 420), 50); // middle middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleMiddle.transform.position.x, middleMiddle.transform.position.y), 50); // middle middle tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 420), 50); // middle right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(middleRight.transform.position.x, middleRight.transform.position.y), 50); // middle right tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 250), 50); // lower left tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerLeft.transform.position.x, lowerLeft.transform.position.y), 50); // lower left tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 250), 50); // lower middle tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerMiddle.transform.position.x, lowerMiddle.transform.position.y), 50); // lower middle tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 250), 50); // lower right tile
+        results = Physics2D.OverlapCircleAll(new Vector2(lowerRight.transform.position.x, lowerRight.transform.position.y), 50); // lower right tile
         findText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
     }
@@ -247,77 +255,77 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         }
     }
 
-    IEnumerator CheckForWords() 
-    {
-        Collider2D[] results;
-        GameObject rowTile1, rowTile2, rowTile3, colTile1, colTile2, colTile3;
-        TMP_Text rowTile1Text, rowTile2Text, rowTile3Text, colTile1Text, colTile2Text, colTile3Text;
+    // IEnumerator CheckForWords() 
+    // {
+    //     Collider2D[] results;
+    //     GameObject rowTile1, rowTile2, rowTile3, colTile1, colTile2, colTile3;
+    //     TMP_Text rowTile1Text, rowTile2Text, rowTile3Text, colTile1Text, colTile2Text, colTile3Text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(265, 585), 50); // upper left tiles
-        CheckForWordsHelper(results, out rowTile1, out colTile1, out rowTile1Text, out colTile1Text);
+    //     results = Physics2D.OverlapCircleAll(new Vector2(265, 585), 50); // upper left tiles
+    //     CheckForWordsHelper(results, out rowTile1, out colTile1, out rowTile1Text, out colTile1Text);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(435, 585), 50); // upper middle tiles
-        CheckForWordsHelper(results, out rowTile2, out colTile2, out rowTile2Text, out colTile2Text);
+    //     results = Physics2D.OverlapCircleAll(new Vector2(435, 585), 50); // upper middle tiles
+    //     CheckForWordsHelper(results, out rowTile2, out colTile2, out rowTile2Text, out colTile2Text);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(610, 585), 50); // upper right tiles
-        CheckForWordsHelper(results, out rowTile3, out colTile3, out rowTile3Text, out colTile3Text);
+    //     results = Physics2D.OverlapCircleAll(new Vector2(610, 585), 50); // upper right tiles
+    //     CheckForWordsHelper(results, out rowTile3, out colTile3, out rowTile3Text, out colTile3Text);
 
-        if (rowTile1Text.text == "H" && rowTile2Text.text == "A" && rowTile3Text.text == "Y" || colTile1Text.text == "H" && colTile2Text.text == "A" && colTile3Text.text == "Y") {
-            float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
-            float increment = 0.2f/5; //The amount of change to apply.
-            while (progress < 1)
-            {
-                rowTile1.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                rowTile2.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                rowTile3.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                colTile1.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                colTile2.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                colTile3.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
-                progress += increment;
-                yield return new WaitForSeconds(0.02f);
-            }
-            word1 = true;
-        } else {
-            if (word1) {
-                float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
-                float increment = 0.2f/5; //The amount of change to apply.
-                while (progress < 1)
-                {
-                    rowTile1.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    rowTile2.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    rowTile3.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    colTile1.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    colTile2.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    colTile3.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    currDraggedTile.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
-                    progress += increment;
-                    yield return new WaitForSeconds(0.02f);
-                }
-                word1 = false;
-            }
-        }
-    }
+    //     if (rowTile1Text.text == "H" && rowTile2Text.text == "A" && rowTile3Text.text == "Y" || colTile1Text.text == "H" && colTile2Text.text == "A" && colTile3Text.text == "Y") {
+    //         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+    //         float increment = 0.2f/5; //The amount of change to apply.
+    //         while (progress < 1)
+    //         {
+    //             rowTile1.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             rowTile2.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             rowTile3.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             colTile1.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             colTile2.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             colTile3.GetComponent<Image>().color = Color.Lerp(Color.white, Color.red, progress);
+    //             progress += increment;
+    //             yield return new WaitForSeconds(0.02f);
+    //         }
+    //         word1 = true;
+    //     } else {
+    //         if (word1) {
+    //             float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+    //             float increment = 0.2f/5; //The amount of change to apply.
+    //             while (progress < 1)
+    //             {
+    //                 rowTile1.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 rowTile2.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 rowTile3.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 colTile1.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 colTile2.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 colTile3.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 currDraggedTile.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, progress);
+    //                 progress += increment;
+    //                 yield return new WaitForSeconds(0.02f);
+    //             }
+    //             word1 = false;
+    //         }
+    //     }
+    // }
 
-    private void CheckForWordsHelper(Collider2D[] results, out GameObject rowTile, out GameObject colTile, out TMP_Text rowTileText, out TMP_Text colTileText) 
-    {
-        rowTile = null;
-        colTile = null;
-        rowTileText = null;
-        colTileText = null;
+    // private void CheckForWordsHelper(Collider2D[] results, out GameObject rowTile, out GameObject colTile, out TMP_Text rowTileText, out TMP_Text colTileText) 
+    // {
+    //     rowTile = null;
+    //     colTile = null;
+    //     rowTileText = null;
+    //     colTileText = null;
 
-        foreach (Collider2D collider in results) {
-            GameObject curr = collider.gameObject;
-            if (curr.tag == "Row") {
-                rowTile = curr.gameObject;
-                GameObject rowTileCanvas = curr.transform.GetChild(0).gameObject;
-                GameObject rowTileTextObject = rowTileCanvas.transform.GetChild(0).gameObject;
-                rowTileText = rowTileTextObject.GetComponent<TMP_Text>(); 
-            } else if (curr.tag == "Col") {
-                colTile = curr.gameObject;
-                GameObject colTileCanvas = curr.transform.GetChild(0).gameObject;
-                GameObject colTileTextObject = colTileCanvas.transform.GetChild(0).gameObject;
-                colTileText = colTileTextObject.GetComponent<TMP_Text>(); 
-            }
-        }
-    }
+    //     foreach (Collider2D collider in results) {
+    //         GameObject curr = collider.gameObject;
+    //         if (curr.tag == "Row") {
+    //             rowTile = curr.gameObject;
+    //             GameObject rowTileCanvas = curr.transform.GetChild(0).gameObject;
+    //             GameObject rowTileTextObject = rowTileCanvas.transform.GetChild(0).gameObject;
+    //             rowTileText = rowTileTextObject.GetComponent<TMP_Text>(); 
+    //         } else if (curr.tag == "Col") {
+    //             colTile = curr.gameObject;
+    //             GameObject colTileCanvas = curr.transform.GetChild(0).gameObject;
+    //             GameObject colTileTextObject = colTileCanvas.transform.GetChild(0).gameObject;
+    //             colTileText = colTileTextObject.GetComponent<TMP_Text>(); 
+    //         }
+    //     }
+    // }
 }
