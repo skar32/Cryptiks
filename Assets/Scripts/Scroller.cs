@@ -9,9 +9,8 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     public GameObject rows, columns;
     public ScrollRect OtherScrollRect1, OtherScrollRect2, OtherScrollRect3;
     public GameObject upperLeft, middleLeft, lowerLeft, upperMiddle, middleMiddle, lowerMiddle, upperRight, middleRight, lowerRight;
-    public static GameObject currColRow;
     private ScrollRect _myScrollRect;
-    private bool scrollOther; //This tracks if the other one should be scrolling instead of the current one.
+    public static bool scrollOther; //This tracks if the other one should be scrolling instead of the current one.
     private bool scrollOtherHorizontally; //This tracks whether the other one should scroll horizontally or vertically.
     private bool scroll1, scroll2, scroll3;
     private bool word1;
@@ -42,17 +41,18 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         float horizontal = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
         float vertical = Mathf.Abs(eventData.position.y - eventData.pressPosition.y);
 
-        float xPos = eventData.pressPosition.x/Screen.width;
-        float yPos = eventData.pressPosition.y/Screen.height;
+        float xPos = eventData.pressPosition.x / Screen.width;
+        float yPos = eventData.pressPosition.y / Screen.height;
 
-        // Debug.Log("X: " + xPos);
-        // Debug.Log("Y: " + yPos);
+        Debug.Log("X: " + xPos);
+        Debug.Log("Y: " + yPos);
 
         if (scrollOtherHorizontally) // if the other scroll rect should be scrolled horizontally
         {
             if (horizontal > vertical)
             {
                 scrollOther = true;
+                Debug.Log("Switching to horizontal");
                 _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
                 updateRowTiles(); // update the row tiles with the right letters before switching to it
@@ -80,6 +80,7 @@ public class Scroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         else if (vertical > horizontal) // if the other scroll rect should be scrolled vertically
         {
             scrollOther = true;
+            Debug.Log("Switching to vertical");
             _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
             updateColumnTiles(); // update the column tiles with the right letters before switching to it

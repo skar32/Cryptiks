@@ -230,6 +230,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1075298341}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &97334993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -329,6 +330,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 873272892}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &170127854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -685,6 +687,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 648076437}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &298341342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -756,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05882353, g: 0.011764706, b: 0.09803922, a: 1}
+  m_Color: {r: 0.11954755, g: 0.08691706, b: 0.1792453, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1095,6 +1098,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: infiniteScrollingEndSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: snapTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748537, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
@@ -1594,6 +1601,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 2108210216}
+  tileCounterpart: {fileID: 0}
 --- !u!1 &591441658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1699,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1464634157}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &602394241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2207,6 +2216,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 2077513075}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &862965055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2716,6 +2726,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 222902508}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &1138604968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2764,6 +2775,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 757846019}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &1169888385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2812,6 +2824,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1496298025}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &1176244655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3219,6 +3232,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 677203754}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &1384923231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3614,6 +3628,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: automaticLayoutSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: snapTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108050640453308655, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
@@ -4138,6 +4156,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1606236613}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &1754900301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4436,6 +4455,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: infiniteScrollingEndSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: snapTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748537, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
@@ -4737,6 +4760,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1010057427}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &2007466618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4860,6 +4884,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 591441658}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &2079760967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5118,6 +5143,10 @@ PrefabInstance:
       propertyPath: onPanelChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1066850834}
+    - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: snapTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8108050640453308655, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: m_fontColor.r
       value: 1
@@ -5338,6 +5367,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 80848623}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &2110624294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5386,6 +5416,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 720421264}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &2128640098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5611,6 +5642,10 @@ PrefabInstance:
       propertyPath: infiniteScrollingEndSpacing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102402239775748519, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
+      propertyPath: snapTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7102402239775748537, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5787,6 +5822,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 443138243}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &6296157549266599976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5835,6 +5871,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 1764167535}
+  tileCounterpart: {fileID: 0}
 --- !u!61 &6296157549853521416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5909,6 +5946,7 @@ MonoBehaviour:
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
   correctBorderColor: {r: 0.94509804, g: 0.3882353, b: 0.047058824, a: 1}
   border: {fileID: 279314473}
+  tileCounterpart: {fileID: 0}
 --- !u!224 &6296157549971823350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7102402239775748537, guid: c3fb52e93aed7ef47aa2897436e322b0, type: 3}
@@ -6136,6 +6174,10 @@ PrefabInstance:
     - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: size.y
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108050639531893689, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
+      propertyPath: snapTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108050640453308655, guid: 2fc3e7cb2c556d1409c23ae7163905b7, type: 3}
       propertyPath: m_fontColor.r

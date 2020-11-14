@@ -102,142 +102,170 @@ public class HighlightingManager : MonoBehaviour
         string colGridWord3 = colTile7Text.text + colTile8Text.text + colTile9Text.text;
 
         // check for correct letter placements
-        if (rowTile1Text.text == "H" && colTile1Text.text == "H" && (!rowTile1.GetComponent<TileScript>().getBorderHighlight() && !colTile1.GetComponent<TileScript>().getBorderHighlight()))         {
-            rowTile1.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile1.GetComponent<TileScript>().setBorderHighlight(true);
+        if (rowTile1Text.text == "H" && colTile1Text.text == "H" && (!rowTile1.GetComponent<TileScript>().GetBorderHighlight() && !colTile1.GetComponent<TileScript>().GetBorderHighlight()))         {
+            rowTile1.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile1.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile2Text.text == "I" && colTile2Text.text == "I" && (!rowTile2.GetComponent<TileScript>().getBorderHighlight() && !colTile2.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile2Text.text == "I" && colTile2Text.text == "I" && (!rowTile2.GetComponent<TileScript>().GetBorderHighlight() && !colTile2.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile2.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile2.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile2.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile2.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile3Text.text == "T" && colTile3Text.text == "T" && (!rowTile3.GetComponent<TileScript>().getBorderHighlight() && !colTile3.GetComponent<TileScript>().getBorderHighlight()))         {
-            rowTile3.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile3.GetComponent<TileScript>().setBorderHighlight(true);
+        if (rowTile3Text.text == "T" && colTile3Text.text == "T" && (!rowTile3.GetComponent<TileScript>().GetBorderHighlight() && !colTile3.GetComponent<TileScript>().GetBorderHighlight()))         {
+            rowTile3.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile3.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile4Text.text == "T" && colTile4Text.text == "T" && (!rowTile4.GetComponent<TileScript>().getBorderHighlight() && !colTile4.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile4Text.text == "T" && colTile4Text.text == "T" && (!rowTile4.GetComponent<TileScript>().GetBorderHighlight() && !colTile4.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile4.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile4.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile4.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile4.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile5Text.text == "H" && colTile5Text.text == "H" && (!rowTile5.GetComponent<TileScript>().getBorderHighlight() && !colTile5.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile5Text.text == "H" && colTile5Text.text == "H" && (!rowTile5.GetComponent<TileScript>().GetBorderHighlight() && !colTile5.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile5.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile5.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile5.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile5.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile6Text.text == "E" && colTile6Text.text == "E" && (!rowTile6.GetComponent<TileScript>().getBorderHighlight() && !colTile6.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile6Text.text == "E" && colTile6Text.text == "E" && (!rowTile6.GetComponent<TileScript>().GetBorderHighlight() && !colTile6.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile6.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile6.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile6.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile6.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile7Text.text == "H" && colTile7Text.text == "H" && (!rowTile7.GetComponent<TileScript>().getBorderHighlight() && !colTile7.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile7Text.text == "H" && colTile7Text.text == "H" && (!rowTile7.GetComponent<TileScript>().GetBorderHighlight() && !colTile7.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile7.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile7.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile7.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile7.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile8Text.text == "A" && colTile8Text.text == "A" && (!rowTile8.GetComponent<TileScript>().getBorderHighlight() && !colTile8.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile8Text.text == "A" && colTile8Text.text == "A" && (!rowTile8.GetComponent<TileScript>().GetBorderHighlight() && !colTile8.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile8.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile8.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile8.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile8.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
 
-        if (rowTile9Text.text == "Y" && colTile9Text.text == "Y" && (!rowTile9.GetComponent<TileScript>().getBorderHighlight() && !colTile9.GetComponent<TileScript>().getBorderHighlight())) 
+        if (rowTile9Text.text == "Y" && colTile9Text.text == "Y" && (!rowTile9.GetComponent<TileScript>().GetBorderHighlight() && !colTile9.GetComponent<TileScript>().GetBorderHighlight())) 
         {
-            rowTile9.GetComponent<TileScript>().setBorderHighlight(true);
-            colTile9.GetComponent<TileScript>().setBorderHighlight(true);
+            rowTile9.GetComponent<TileScript>().SetBorderHighlight(true);
+            colTile9.GetComponent<TileScript>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // rowTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                // colTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                rowTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                colTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
@@ -247,133 +275,160 @@ public class HighlightingManager : MonoBehaviour
         // check for correct words in the wrong spots
         foreach (string word in correctWords) 
         {
-            if (!string.Equals(word, "HIT") && (!rowTile1.GetComponent<TileScript>().getTileHighlight() || !colTile1.GetComponent<TileScript>().getTileHighlight()) && (string.Equals(word, rowGridWord1) || string.Equals(word, colGridWord1))) 
+            if ((!rowTile1.GetComponent<TileScript>().GetTileHighlight() || !colTile1.GetComponent<TileScript>().GetTileHighlight()) && (string.Equals(word, rowGridWord1) || string.Equals(word, colGridWord1))) 
             {
-                rowTile1.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile2.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile3.GetComponent<TileScript>().setTileHighlight(true);
+                rowTile1.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile2.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile3.GetComponent<TileScript>().SetTileHighlight(true);
 
-                colTile1.GetComponent<TileScript>().setTileHighlight(true);
-                colTile2.GetComponent<TileScript>().setTileHighlight(true);
-                colTile3.GetComponent<TileScript>().setTileHighlight(true);
+                colTile1.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile2.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile3.GetComponent<TileScript>().SetTileHighlight(true);
 
-                rowTile1.GetComponent<TileScript>().setOtherTile1(rowTile2);
-                rowTile1.GetComponent<TileScript>().setOtherTile2(rowTile3);
+                rowTile1.GetComponent<TileScript>().SetOtherTile1(rowTile2);
+                rowTile1.GetComponent<TileScript>().SetOtherTile2(rowTile3);
 
-                rowTile2.GetComponent<TileScript>().setOtherTile1(rowTile1);
-                rowTile2.GetComponent<TileScript>().setOtherTile2(rowTile3);
+                rowTile2.GetComponent<TileScript>().SetOtherTile1(rowTile1);
+                rowTile2.GetComponent<TileScript>().SetOtherTile2(rowTile3);
 
-                rowTile3.GetComponent<TileScript>().setOtherTile1(rowTile1);
-                rowTile3.GetComponent<TileScript>().setOtherTile2(rowTile2);
+                rowTile3.GetComponent<TileScript>().SetOtherTile1(rowTile1);
+                rowTile3.GetComponent<TileScript>().SetOtherTile2(rowTile2);
 
-                colTile1.GetComponent<TileScript>().setOtherTile1(colTile2);
-                colTile1.GetComponent<TileScript>().setOtherTile2(colTile3);
+                colTile1.GetComponent<TileScript>().SetOtherTile1(colTile2);
+                colTile1.GetComponent<TileScript>().SetOtherTile2(colTile3);
 
-                colTile2.GetComponent<TileScript>().setOtherTile1(colTile1);
-                colTile2.GetComponent<TileScript>().setOtherTile2(colTile3);
+                colTile2.GetComponent<TileScript>().SetOtherTile1(colTile1);
+                colTile2.GetComponent<TileScript>().SetOtherTile2(colTile3);
 
-                colTile3.GetComponent<TileScript>().setOtherTile1(colTile1);
-                colTile3.GetComponent<TileScript>().setOtherTile2(colTile2);
+                colTile3.GetComponent<TileScript>().SetOtherTile1(colTile1);
+                colTile3.GetComponent<TileScript>().SetOtherTile2(colTile2);
 
                 float t = 0f;
                 while (t <= 1f)
                 {
-                    rowTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+
+                    rowTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
                     
                     t += Time.deltaTime;
                     yield return new WaitForSeconds(0.001f);
                 }
             }
-            if (!string.Equals(word, "THE") && (!rowTile4.GetComponent<TileScript>().getTileHighlight() || !colTile4.GetComponent<TileScript>().getTileHighlight()) && (string.Equals(word, rowGridWord2) || string.Equals(word, colGridWord2))) 
+            if ((!rowTile4.GetComponent<TileScript>().GetTileHighlight() || !colTile4.GetComponent<TileScript>().GetTileHighlight()) && (string.Equals(word, rowGridWord2) || string.Equals(word, colGridWord2))) 
             {
-                rowTile4.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile5.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile6.GetComponent<TileScript>().setTileHighlight(true);
+                rowTile4.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile5.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile6.GetComponent<TileScript>().SetTileHighlight(true);
 
-                colTile4.GetComponent<TileScript>().setTileHighlight(true);
-                colTile5.GetComponent<TileScript>().setTileHighlight(true);
-                colTile6.GetComponent<TileScript>().setTileHighlight(true);
+                colTile4.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile5.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile6.GetComponent<TileScript>().SetTileHighlight(true);
 
-                rowTile4.GetComponent<TileScript>().setOtherTile1(rowTile5);
-                rowTile4.GetComponent<TileScript>().setOtherTile2(rowTile6);
+                rowTile4.GetComponent<TileScript>().SetOtherTile1(rowTile5);
+                rowTile4.GetComponent<TileScript>().SetOtherTile2(rowTile6);
 
-                rowTile5.GetComponent<TileScript>().setOtherTile1(rowTile4);
-                rowTile5.GetComponent<TileScript>().setOtherTile2(rowTile6);
+                rowTile5.GetComponent<TileScript>().SetOtherTile1(rowTile4);
+                rowTile5.GetComponent<TileScript>().SetOtherTile2(rowTile6);
 
-                rowTile6.GetComponent<TileScript>().setOtherTile1(rowTile4);
-                rowTile6.GetComponent<TileScript>().setOtherTile2(rowTile5);
+                rowTile6.GetComponent<TileScript>().SetOtherTile1(rowTile4);
+                rowTile6.GetComponent<TileScript>().SetOtherTile2(rowTile5);
 
-                colTile4.GetComponent<TileScript>().setOtherTile1(colTile5);
-                colTile4.GetComponent<TileScript>().setOtherTile2(colTile6);
+                colTile4.GetComponent<TileScript>().SetOtherTile1(colTile5);
+                colTile4.GetComponent<TileScript>().SetOtherTile2(colTile6);
 
-                colTile5.GetComponent<TileScript>().setOtherTile1(colTile4);
-                colTile5.GetComponent<TileScript>().setOtherTile2(colTile6);
+                colTile5.GetComponent<TileScript>().SetOtherTile1(colTile4);
+                colTile5.GetComponent<TileScript>().SetOtherTile2(colTile6);
 
-                colTile6.GetComponent<TileScript>().setOtherTile1(colTile4);
-                colTile6.GetComponent<TileScript>().setOtherTile2(colTile5);
+                colTile6.GetComponent<TileScript>().SetOtherTile1(colTile4);
+                colTile6.GetComponent<TileScript>().SetOtherTile2(colTile5);
 
                 float t = 0f;
                 while (t <= 1f)
                 {
-                    rowTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+
+                    rowTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
                     
                     t += Time.deltaTime;
                     yield return new WaitForSeconds(0.001f);
                 }
             }
-            if (!string.Equals(word, "HAY") && (!rowTile7.GetComponent<TileScript>().getTileHighlight() || !colTile7.GetComponent<TileScript>().getTileHighlight()) && (string.Equals(word, rowGridWord3) || string.Equals(word, colGridWord3))) 
+            if ((!rowTile7.GetComponent<TileScript>().GetTileHighlight() || !colTile7.GetComponent<TileScript>().GetTileHighlight()) && (string.Equals(word, rowGridWord3) || string.Equals(word, colGridWord3))) 
             {
-                rowTile7.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile8.GetComponent<TileScript>().setTileHighlight(true);
-                rowTile9.GetComponent<TileScript>().setTileHighlight(true);
+                rowTile7.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile8.GetComponent<TileScript>().SetTileHighlight(true);
+                rowTile9.GetComponent<TileScript>().SetTileHighlight(true);
 
-                colTile7.GetComponent<TileScript>().setTileHighlight(true);
-                colTile8.GetComponent<TileScript>().setTileHighlight(true);
-                colTile9.GetComponent<TileScript>().setTileHighlight(true);
+                colTile7.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile8.GetComponent<TileScript>().SetTileHighlight(true);
+                colTile9.GetComponent<TileScript>().SetTileHighlight(true);
 
-                rowTile7.GetComponent<TileScript>().setOtherTile1(rowTile8);
-                rowTile7.GetComponent<TileScript>().setOtherTile2(rowTile9);
+                rowTile7.GetComponent<TileScript>().SetOtherTile1(rowTile8);
+                rowTile7.GetComponent<TileScript>().SetOtherTile2(rowTile9);
 
-                rowTile8.GetComponent<TileScript>().setOtherTile1(rowTile7);
-                rowTile8.GetComponent<TileScript>().setOtherTile2(rowTile9);
+                rowTile8.GetComponent<TileScript>().SetOtherTile1(rowTile7);
+                rowTile8.GetComponent<TileScript>().SetOtherTile2(rowTile9);
 
-                rowTile9.GetComponent<TileScript>().setOtherTile1(rowTile7);
-                rowTile9.GetComponent<TileScript>().setOtherTile2(rowTile8);
+                rowTile9.GetComponent<TileScript>().SetOtherTile1(rowTile7);
+                rowTile9.GetComponent<TileScript>().SetOtherTile2(rowTile8);
 
-                colTile7.GetComponent<TileScript>().setOtherTile1(colTile8);
-                colTile7.GetComponent<TileScript>().setOtherTile2(colTile9);
+                colTile7.GetComponent<TileScript>().SetOtherTile1(colTile8);
+                colTile7.GetComponent<TileScript>().SetOtherTile2(colTile9);
 
-                colTile8.GetComponent<TileScript>().setOtherTile1(colTile7);
-                colTile8.GetComponent<TileScript>().setOtherTile2(colTile9);
+                colTile8.GetComponent<TileScript>().SetOtherTile1(colTile7);
+                colTile8.GetComponent<TileScript>().SetOtherTile2(colTile9);
 
-                colTile9.GetComponent<TileScript>().setOtherTile1(colTile7);
-                colTile9.GetComponent<TileScript>().setOtherTile2(colTile8);
+                colTile9.GetComponent<TileScript>().SetOtherTile1(colTile7);
+                colTile9.GetComponent<TileScript>().SetOtherTile2(colTile8);
 
                 float t = 0f;
                 while (t <= 1f)
                 {
-                    rowTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
-                    rowTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                    colTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // rowTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                    // colTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+
+                    rowTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+
+                    rowTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                    colTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
                     
                     t += Time.deltaTime;
                     yield return new WaitForSeconds(0.001f);

@@ -12,35 +12,35 @@ public class TileScript : MonoBehaviour
     public Color baseBorderColor;
     public Color correctBorderColor;
     public GameObject border;
-    public GameObject tileCounterpart;
+    private GameObject tileCounterpart;
     private GameObject otherTile1, otherTile2;
     private bool borderHighlighted;
     private bool partOfWord;
 
-    public void setBorderHighlight(bool value)
+    public void SetBorderHighlight(bool value)
     {
         borderHighlighted = value;
     }
 
-    public void setTileHighlight(bool value)
+    public void SetTileHighlight(bool value)
     {
         partOfWord = value;
     }
 
-    public void setOtherTile1(GameObject tile1) {
+    public void SetOtherTile1(GameObject tile1) {
         otherTile1 = tile1;
     }
 
-    public void setOtherTile2(GameObject tile2) {
+    public void SetOtherTile2(GameObject tile2) {
         otherTile2 = tile2;
     }
 
-    public bool getBorderHighlight()
+    public bool GetBorderHighlight()
     {
         return borderHighlighted;
     }
 
-    public bool getTileHighlight()
+    public bool GetTileHighlight()
     {
         return partOfWord;
     }
@@ -50,7 +50,7 @@ public class TileScript : MonoBehaviour
         
     }
 
-    public void detectHighlight()
+    public void DetectHighlight()
     {
         Collider2D[] results = Physics2D.OverlapCircleAll(new Vector2(this.transform.position.x, this.transform.position.y), 50);
         foreach (Collider2D col in results) {
@@ -62,27 +62,27 @@ public class TileScript : MonoBehaviour
             }
         }
 
-        if (borderHighlighted && tileCounterpart.GetComponent<TileScript>().getBorderHighlight()) 
+        if (borderHighlighted && tileCounterpart.GetComponent<TileScript>().GetBorderHighlight()) 
         {
-            StartCoroutine(removeBorderHighlight());
-            StartCoroutine(tileCounterpart.GetComponent<TileScript>().removeBorderHighlight());
-            tileCounterpart.GetComponent<TileScript>().setBorderHighlight(false);
+            StartCoroutine(RemoveBorderHighlight());
+            StartCoroutine(tileCounterpart.GetComponent<TileScript>().RemoveBorderHighlight());
+            tileCounterpart.GetComponent<TileScript>().SetBorderHighlight(false);
             borderHighlighted = false;
         }
 
-         if (partOfWord && tileCounterpart.GetComponent<TileScript>().getTileHighlight()) 
+         if (partOfWord && tileCounterpart.GetComponent<TileScript>().GetTileHighlight()) 
          {
-            StartCoroutine(removeTileHighlight());
-            StartCoroutine(tileCounterpart.GetComponent<TileScript>().removeTileHighlight());
-            tileCounterpart.GetComponent<TileScript>().setTileHighlight(false);
+            StartCoroutine(RemoveTileHighlight());
+            StartCoroutine(tileCounterpart.GetComponent<TileScript>().RemoveTileHighlight());
+            tileCounterpart.GetComponent<TileScript>().SetTileHighlight(false);
             partOfWord = false;
 
-            otherTile1.GetComponent<TileScript>().removeOtherTileHighlight();
-            otherTile2.GetComponent<TileScript>().removeOtherTileHighlight();
+            otherTile1.GetComponent<TileScript>().RemoveOtherTileHighlight();
+            otherTile2.GetComponent<TileScript>().RemoveOtherTileHighlight();
         }
     }
 
-    public void removeOtherTileHighlight()
+    public void RemoveOtherTileHighlight()
     {
         Collider2D[] results = Physics2D.OverlapCircleAll(new Vector2(this.transform.position.x, this.transform.position.y), 50);
         foreach (Collider2D col in results) {
@@ -94,29 +94,31 @@ public class TileScript : MonoBehaviour
             }
         }
 
-        StartCoroutine(removeTileHighlight());
-        StartCoroutine(tileCounterpart.GetComponent<TileScript>().removeTileHighlight());
-        tileCounterpart.GetComponent<TileScript>().setTileHighlight(false);
+        StartCoroutine(RemoveTileHighlight());
+        StartCoroutine(tileCounterpart.GetComponent<TileScript>().RemoveTileHighlight());
+        tileCounterpart.GetComponent<TileScript>().SetTileHighlight(false);
         partOfWord = false;
     }
 
-    IEnumerator removeBorderHighlight()
-    {
-        float t = 0f;
-        while (t <= 1f)
-        {
-            border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
-            t += Time.deltaTime;
-            yield return new WaitForSeconds(0.001f);
-        }
-    }
-
-    IEnumerator removeTileHighlight()
+    IEnumerator RemoveBorderHighlight()
     {
         float t = 0f;
         while (t <= 1f)
         {
             GetComponent<Image>().color = Color.Lerp(correctWordColor, baseTileColor, t);
+            // border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
+            t += Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+        }
+    }
+
+    IEnumerator RemoveTileHighlight()
+    {
+        float t = 0f;
+        while (t <= 1f)
+        {
+            border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
+            //GetComponent<Image>().color = Color.Lerp(correctWordColor, baseTileColor, t);
             t += Time.deltaTime;
             yield return new WaitForSeconds(0.001f);
         }
