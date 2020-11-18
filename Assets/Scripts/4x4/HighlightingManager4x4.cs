@@ -11,6 +11,8 @@ public class HighlightingManager4x4 : MonoBehaviour
     public string[] correctLetters;
     public Color baseBorderColor;
     public Color correctBorderColor;
+    public GameObject[] letterTexts;
+    private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16;
 
     void Start()
     {
@@ -18,7 +20,9 @@ public class HighlightingManager4x4 : MonoBehaviour
     }
 
     public IEnumerator CheckForWords()
-    {
+    {        
+        yield return new WaitForSeconds(0.5f);
+
         Collider2D[] results;
 
         GameObject colTile1 = null;
@@ -137,6 +141,8 @@ public class HighlightingManager4x4 : MonoBehaviour
         results = Physics2D.OverlapCircleAll(new Vector2(Tile44.transform.position.x, Tile44.transform.position.y), 0.05f); // Tile44
         FindTiles(results, out rowTile16Text, out colTile16Text, out rowTile16, out colTile16);
 
+        Debug.Log(rowTile1Text.text + rowTile2Text.text + rowTile3Text.text + rowTile4Text.text + rowTile5Text.text + rowTile6Text.text + rowTile7Text.text + rowTile8Text.text + rowTile9Text.text + rowTile10Text.text + rowTile11Text.text + rowTile12Text.text + rowTile13Text.text + rowTile14Text.text + rowTile15Text.text + rowTile16Text.text);
+
         // check for correct letter placements
         if (rowTile1Text.text == correctLetters[0] && colTile1Text.text == correctLetters[0] && (!rowTile1.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile1.GetComponent<TileScript4x4>().GetBorderHighlight()))         
         {
@@ -154,6 +160,11 @@ public class HighlightingManager4x4 : MonoBehaviour
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
+            }
+
+            if (!letter1) {
+                letter1 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[0].GetComponent<TMP_Text>()));
             }
         }
 
@@ -174,6 +185,11 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter2) {
+                letter2 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[1].GetComponent<TMP_Text>()));
+            }
         }
 
         if (rowTile3Text.text == correctLetters[2] && colTile3Text.text == correctLetters[2] && (!rowTile3.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile3.GetComponent<TileScript4x4>().GetBorderHighlight()))         {
@@ -191,6 +207,11 @@ public class HighlightingManager4x4 : MonoBehaviour
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
+            }
+
+            if (!letter3) {
+                letter3 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[2].GetComponent<TMP_Text>()));
             }
         }
 
@@ -211,6 +232,11 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter4) {
+                letter4 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[3].GetComponent<TMP_Text>()));
+            }
         }
 
         if (rowTile5Text.text == correctLetters[4] && colTile5Text.text == correctLetters[4] && (!rowTile5.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile5.GetComponent<TileScript4x4>().GetBorderHighlight())) 
@@ -229,6 +255,11 @@ public class HighlightingManager4x4 : MonoBehaviour
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
+            }
+
+            if (!letter5) {
+                letter5 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[4].GetComponent<TMP_Text>()));
             }
         }
 
@@ -249,6 +280,11 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter6) {
+                letter6 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[5].GetComponent<TMP_Text>()));
+            }
         }
 
         if (rowTile7Text.text == correctLetters[6] && colTile7Text.text == correctLetters[6] && (!rowTile7.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile7.GetComponent<TileScript4x4>().GetBorderHighlight())) 
@@ -268,6 +304,11 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter7) {
+                letter7 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[6].GetComponent<TMP_Text>()));
+            }
         }
 
         if (rowTile8Text.text == correctLetters[7] && colTile8Text.text == correctLetters[7] && (!rowTile8.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile8.GetComponent<TileScript4x4>().GetBorderHighlight())) 
@@ -286,6 +327,11 @@ public class HighlightingManager4x4 : MonoBehaviour
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
+            }
+
+            if (!letter8) {
+                letter8 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[7].GetComponent<TMP_Text>()));
             }
         }
 
@@ -307,10 +353,15 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter9) {
+                letter9 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[8].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile10Text.text == correctLetters[9] && colTile10Text.text == correctLetters[9] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
-        {
+        if (rowTile10Text.text == correctLetters[9] && colTile10Text.text == correctLetters[9] && (!rowTile10.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile10.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        {     
             rowTile10.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile10.GetComponent<TileScript4x4>().SetBorderHighlight(true);
 
@@ -327,9 +378,14 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter10) {
+                letter10 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[9].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile11Text.text == correctLetters[10] && colTile11Text.text == correctLetters[10] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile11Text.text == correctLetters[10] && colTile11Text.text == correctLetters[10] && (!rowTile11.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile11.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
             rowTile11.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile11.GetComponent<TileScript4x4>().SetBorderHighlight(true);
@@ -347,29 +403,39 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter11) {
+                letter11 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[10].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile12Text.text == correctLetters[11] && colTile12Text.text == correctLetters[11] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile12Text.text == correctLetters[11] && colTile12Text.text == correctLetters[11] && (!rowTile12.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile12.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
-            rowTile11.GetComponent<TileScript4x4>().SetBorderHighlight(true);
-            colTile11.GetComponent<TileScript4x4>().SetBorderHighlight(true);
+            rowTile12.GetComponent<TileScript4x4>().SetBorderHighlight(true);
+            colTile12.GetComponent<TileScript4x4>().SetBorderHighlight(true);
 
             float t = 0f;
             while (t <= 1f)
             {
-                rowTile11.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile11.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                rowTile12.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
+                colTile12.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
 
-                // rowTile11.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile11.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                // rowTile12.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
+                // colTile12.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
 
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter12) {
+                letter12 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[11].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile13Text.text == correctLetters[12] && colTile13Text.text == correctLetters[12] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile13Text.text == correctLetters[12] && colTile13Text.text == correctLetters[12] && (!rowTile13.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile13.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
             rowTile13.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile13.GetComponent<TileScript4x4>().SetBorderHighlight(true);
@@ -387,9 +453,14 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter13) {
+                letter13 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[12].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile14Text.text == correctLetters[13] && colTile14Text.text == correctLetters[13] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile14Text.text == correctLetters[13] && colTile14Text.text == correctLetters[13] && (!rowTile14.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile14.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
             rowTile14.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile14.GetComponent<TileScript4x4>().SetBorderHighlight(true);
@@ -407,9 +478,14 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter14) {
+                letter14 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[13].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile15Text.text == correctLetters[14] && colTile15Text.text == correctLetters[14] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile15Text.text == correctLetters[14] && colTile15Text.text == correctLetters[14] && (!rowTile15.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile15.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
             rowTile15.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile15.GetComponent<TileScript4x4>().SetBorderHighlight(true);
@@ -427,9 +503,14 @@ public class HighlightingManager4x4 : MonoBehaviour
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
+
+            if (!letter15) {
+                letter15 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[14].GetComponent<TMP_Text>()));
+            }
         }
 
-        if (rowTile16Text.text == correctLetters[15] && colTile16Text.text == correctLetters[15] && (!rowTile9.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile9.GetComponent<TileScript4x4>().GetBorderHighlight())) 
+        if (rowTile16Text.text == correctLetters[15] && colTile16Text.text == correctLetters[15] && (!rowTile16.GetComponent<TileScript4x4>().GetBorderHighlight() && !colTile16.GetComponent<TileScript4x4>().GetBorderHighlight())) 
         {
             rowTile16.GetComponent<TileScript4x4>().SetBorderHighlight(true);
             colTile16.GetComponent<TileScript4x4>().SetBorderHighlight(true);
@@ -446,6 +527,11 @@ public class HighlightingManager4x4 : MonoBehaviour
 
                 t += Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
+            }
+
+            if (!letter16) {
+                letter16 = true;
+                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[15].GetComponent<TMP_Text>()));
             }
         }
     }
@@ -470,6 +556,16 @@ public class HighlightingManager4x4 : MonoBehaviour
                 GameObject colTileTextObject = colTileCanvas.transform.GetChild(0).gameObject;
                 colText = colTileTextObject.GetComponent<TMP_Text>(); 
             }
+        }
+    }
+
+    public IEnumerator FadeTextToFullAlpha(float t, TMP_Text text)
+    {
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
+        while (text.color.a < 1.0f)
+        {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime / t));
+            yield return null;
         }
     }
 }
