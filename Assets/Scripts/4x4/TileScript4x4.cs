@@ -9,7 +9,6 @@ public class TileScript4x4 : MonoBehaviour
 {
     public Color baseBorderColor;
     public Color correctBorderColor;
-    public GameObject border;
     private GameObject tileCounterpart;
     private bool borderHighlighted;
 
@@ -24,7 +23,7 @@ public class TileScript4x4 : MonoBehaviour
     }
 
     public void DetectHighlight()
-    {
+    {    
         Collider2D[] results = Physics2D.OverlapCircleAll(new Vector2(this.transform.position.x, this.transform.position.y), 0.05f);
         foreach (Collider2D col in results) {
             GameObject curr = col.gameObject;
@@ -35,7 +34,7 @@ public class TileScript4x4 : MonoBehaviour
             }
         }
 
-        if (borderHighlighted || tileCounterpart.GetComponent<TileScript4x4>().GetBorderHighlight()) 
+        if (borderHighlighted && tileCounterpart.GetComponent<TileScript4x4>().GetBorderHighlight()) 
         {
             StartCoroutine(RemoveBorderHighlight());
             StartCoroutine(tileCounterpart.GetComponent<TileScript4x4>().RemoveBorderHighlight());
@@ -49,7 +48,8 @@ public class TileScript4x4 : MonoBehaviour
         float t = 0f;
         while (t <= 1f)
         {
-            border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
+            // border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
+            this.gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
             t += Time.deltaTime;
             yield return new WaitForSeconds(0.001f);
         }

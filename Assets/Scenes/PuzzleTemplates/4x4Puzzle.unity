@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17688275}
   - component: {fileID: 17688276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63267155}
   - component: {fileID: 63267156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68079653}
   - component: {fileID: 68079654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,11 +798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &114519974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,11 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &147285489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147285490}
   - component: {fileID: 147285491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2022,11 +2016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &253130700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307249010}
   - component: {fileID: 307249011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2909,11 +2900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &421416616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421925302}
   - component: {fileID: 421925303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3784,11 +3772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &506407331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,11 +4195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &573649412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,11 +4602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &583150593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4762,11 +4741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &583896303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,11 +5184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &614315745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,11 +5702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &647681339
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,11 +6245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &682434616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,7 +6257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682434617}
   - component: {fileID: 682434618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6579,11 +6546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &697127319
 GameObject:
   m_ObjectHideFlags: 0
@@ -7391,11 +7355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &750305344
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,11 +7494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &750474201
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,11 +8429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &871723125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8713,11 +8668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &912544250
 GameObject:
   m_ObjectHideFlags: 0
@@ -9506,11 +9458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &992370290
 GameObject:
   m_ObjectHideFlags: 0
@@ -9648,11 +9597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1008490889
 GameObject:
   m_ObjectHideFlags: 0
@@ -9924,11 +9870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1035044750
 GameObject:
   m_ObjectHideFlags: 0
@@ -10141,11 +10084,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1076707995
 GameObject:
   m_ObjectHideFlags: 0
@@ -10626,11 +10566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1123536421
 GameObject:
   m_ObjectHideFlags: 0
@@ -10850,7 +10787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150082031}
   - component: {fileID: 1150082032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11210,11 +11147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1183088701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11620,11 +11554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1199815063
 GameObject:
   m_ObjectHideFlags: 0
@@ -11919,7 +11850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229589916}
   - component: {fileID: 1229589917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12108,11 +12039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1246609673
 GameObject:
   m_ObjectHideFlags: 0
@@ -12123,7 +12051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246609674}
   - component: {fileID: 1246609675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13394,11 +13322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1529092403
 GameObject:
   m_ObjectHideFlags: 0
@@ -13693,7 +13618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561792748}
   - component: {fileID: 1561792749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14082,11 +14007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1606183892
 GameObject:
   m_ObjectHideFlags: 0
@@ -14519,11 +14441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1648338395
 GameObject:
   m_ObjectHideFlags: 0
@@ -14661,11 +14580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1665846627
 GameObject:
   m_ObjectHideFlags: 0
@@ -15336,11 +15252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1722462916
 GameObject:
   m_ObjectHideFlags: 0
@@ -15720,7 +15633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744827225}
   - component: {fileID: 1744827226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15916,7 +15829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762867312}
   - component: {fileID: 1762867313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17094,11 +17007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &1958715637
 GameObject:
   m_ObjectHideFlags: 0
@@ -17318,7 +17228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978405449}
   - component: {fileID: 1978405450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17380,7 +17290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987524462}
   - component: {fileID: 1987524463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17847,7 +17757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013418952}
   - component: {fileID: 2013418953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18170,11 +18080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &2037197736
 GameObject:
   m_ObjectHideFlags: 0
@@ -18717,11 +18624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a424ce8420c3ac245996726b03f7ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTileColor: {r: 0.11372549, g: 0.03137255, b: 0.21960784, a: 1}
-  correctWordColor: {r: 0.7264151, g: 0.18091846, b: 0.5798284, a: 1}
   baseBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 0.5882353}
   correctBorderColor: {r: 0.20784314, g: 0.3529412, b: 0.6666667, a: 1}
-  border: {fileID: 753110156}
 --- !u!1 &2080056569
 GameObject:
   m_ObjectHideFlags: 0
