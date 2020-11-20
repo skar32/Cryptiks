@@ -63,7 +63,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 columns.GetComponent<CanvasGroup>().alpha = 0f;
                 columns.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
-                if (yPos == 300) { // if row 1 should be scrolled
+                if (yPos == 365) { // if row 1 should be scrolled
                     ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row1");
                     scroll1 = true;
@@ -71,7 +71,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                      ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row2");
                     scroll2 = true;
-                } else if (yPos == -100) { // if row 3 should be scrolled
+                } else if (yPos == -170) { // if row 3 should be scrolled
                      ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                     //Debug.Log("row3");
                     scroll3 = true;
@@ -91,7 +91,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             columns.GetComponent<CanvasGroup>().alpha = 1f;
             columns.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
-            if (xPos == -300) { // if col 1 should be scrolled
+            if (xPos == -370) { // if col 1 should be scrolled
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect1.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col1");
                 scroll1 = true;
@@ -99,7 +99,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect2.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col2");
                 scroll2 = true;
-            } else if (xPos == 100) { // if col 3 should be scrolled
+            } else if (xPos == 165) { // if col 3 should be scrolled
                 ExecuteEvents.Execute<IBeginDragHandler> (OtherScrollRect3.gameObject, eventData, ExecuteEvents.beginDragHandler);
                 //Debug.Log("col3");
                 scroll3 = true;
@@ -132,7 +132,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             UpdateColumnTiles();
         }
 
-        //StartCoroutine(highlightingScript.CheckForWords());
+        StartCoroutine(highlightingScript.CheckForWords());
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -160,39 +160,39 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         TMP_Text rowTileText = null;
         TMP_Text colTileText = null;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.5f); // Tile11
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.3f); // Tile11
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.5f); // Tile12
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.3f); // Tile12
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.5f); // Tile13
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.3f); // Tile13
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.5f); // Tile21
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.3f); // Tile21
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.5f); // Tile22
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.3f); // Tile22
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.5f); // Tile23
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.3f); // Tile23
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.5f); // Tile31
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.3f); // Tile31
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.5f); // Tile32
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.3f); // Tile32
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.5f); // Tile33
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.3f); // Tile33
         FindText(results, out rowTileText, out colTileText);
         rowTileText.text = colTileText.text;
     }
@@ -205,39 +205,39 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         TMP_Text rowTileText = null;
         TMP_Text colTileText = null;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.5f); // Tile11
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.3f); // Tile11
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.5f); // Tile12
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.3f); // Tile12
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.5f); // Tile13
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.3f); // Tile13
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.5f); // Tile21
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.3f); // Tile21
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.5f); // Tile22
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.3f); // Tile22
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.5f); // Tile23
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.3f); // Tile23
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.5f); // Tile31
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.3f); // Tile31
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.5f); // Tile32
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.3f); // Tile32
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.5f); // Tile33
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.3f); // Tile33
         FindText(results, out rowTileText, out colTileText);
         colTileText.text = rowTileText.text;
     }
@@ -248,7 +248,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         colText = null;
         foreach (Collider2D collider in results) {
             GameObject curr = collider.gameObject;
-            //Debug.Log(curr.gameObject.name);
+            Debug.Log(curr.gameObject.name);
             if (curr.tag == "Row") {
                 GameObject rowTileCanvas = curr.transform.GetChild(0).gameObject;
                 GameObject rowTileTextObject = rowTileCanvas.transform.GetChild(0).gameObject;
@@ -259,6 +259,6 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 colText = colTileTextObject.GetComponent<TMP_Text>(); 
             }
         }
-        //Debug.Log("break");
+        Debug.Log("break");
     }
 }

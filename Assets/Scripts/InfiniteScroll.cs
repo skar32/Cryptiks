@@ -113,7 +113,7 @@ public class InfiniteScroll : MonoBehaviour {
     }
     private Vector2 _newAnchoredPosition = Vector2.zero;
     //TO DISABLE FLICKERING OBJECT WHEN SCROLL VIEW IS IDLE IN BETWEEN OBJECTS
-    private float _treshold = 100f; 
+    private float _threshold = 0f; //100f initially
     private int _itemCount = 0;
     private float _recordOffsetX = 0;
     private float _recordOffsetY = 0;
@@ -127,7 +127,7 @@ public class InfiniteScroll : MonoBehaviour {
         {
             if(_isHorizontal)
             {
-                if (_scrollRect.transform.InverseTransformPoint(items[i].gameObject.transform.position).x > _disableMarginX + _treshold)
+                if (_scrollRect.transform.InverseTransformPoint(items[i].gameObject.transform.position).x > _disableMarginX + _threshold)
                 {
                     _newAnchoredPosition = items[i].anchoredPosition;
                     _newAnchoredPosition.x -= _itemCount * _recordOffsetX;
@@ -145,7 +145,7 @@ public class InfiniteScroll : MonoBehaviour {
 
             if(_isVertical)
             {
-                if (_scrollRect.transform.InverseTransformPoint(items[i].gameObject.transform.position).y > _disableMarginY + _treshold)
+                if (_scrollRect.transform.InverseTransformPoint(items[i].gameObject.transform.position).y > _disableMarginY + _threshold)
                 {
                     _newAnchoredPosition = items[i].anchoredPosition;
                     _newAnchoredPosition.y -= _itemCount * _recordOffsetY;
