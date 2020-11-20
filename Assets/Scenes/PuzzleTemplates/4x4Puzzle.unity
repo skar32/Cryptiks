@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17688275}
   - component: {fileID: 17688276}
+  - component: {fileID: 17688278}
   m_Layer: 8
   m_Name: Tile34
   m_TagString: Untagged
@@ -185,6 +186,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &17688278
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17688274}
+  m_CullTransparentMesh: 0
 --- !u!1 &37633566
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63267155}
   - component: {fileID: 63267156}
+  - component: {fileID: 63267158}
   m_Layer: 8
   m_Name: Tile23
   m_TagString: Untagged
@@ -347,6 +357,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &63267158
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63267154}
+  m_CullTransparentMesh: 0
 --- !u!1 &68079652
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68079653}
   - component: {fileID: 68079654}
+  - component: {fileID: 68079656}
   m_Layer: 8
   m_Name: Tile31
   m_TagString: Untagged
@@ -409,6 +428,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &68079656
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68079652}
+  m_CullTransparentMesh: 0
 --- !u!1 &70217290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147285490}
   - component: {fileID: 147285491}
+  - component: {fileID: 147285493}
   m_Layer: 8
   m_Name: Tile13
   m_TagString: Untagged
@@ -1091,6 +1119,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &147285493
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147285489}
+  m_CullTransparentMesh: 0
 --- !u!1 &148151360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,6 +2463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307249010}
   - component: {fileID: 307249011}
+  - component: {fileID: 307249013}
   m_Layer: 8
   m_Name: Tile24
   m_TagString: Untagged
@@ -2479,6 +2516,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &307249013
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307249009}
+  m_CullTransparentMesh: 0
 --- !u!1 &335053348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,6 +3057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421925302}
   - component: {fileID: 421925303}
+  - component: {fileID: 421925305}
   m_Layer: 8
   m_Name: Tile14
   m_TagString: Untagged
@@ -3064,6 +3110,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &421925305
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421925301}
+  m_CullTransparentMesh: 0
 --- !u!1 &440982473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6257,6 +6311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682434617}
   - component: {fileID: 682434618}
+  - component: {fileID: 682434620}
   m_Layer: 8
   m_Name: Tile42
   m_TagString: Untagged
@@ -6309,6 +6364,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &682434620
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682434616}
+  m_CullTransparentMesh: 0
 --- !u!1 &693326389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10787,6 +10850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150082031}
   - component: {fileID: 1150082032}
+  - component: {fileID: 1150082034}
   m_Layer: 8
   m_Name: Tile12
   m_TagString: Untagged
@@ -10839,6 +10903,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1150082034
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150082030}
+  m_CullTransparentMesh: 0
 --- !u!1 &1156241660
 GameObject:
   m_ObjectHideFlags: 0
@@ -11850,6 +11922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229589916}
   - component: {fileID: 1229589917}
+  - component: {fileID: 1229589919}
   m_Layer: 8
   m_Name: Tile44
   m_TagString: Untagged
@@ -11902,6 +11975,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1229589919
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229589915}
+  m_CullTransparentMesh: 0
 --- !u!1 &1236190279
 GameObject:
   m_ObjectHideFlags: 0
@@ -12051,6 +12132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246609674}
   - component: {fileID: 1246609675}
+  - component: {fileID: 1246609677}
   m_Layer: 8
   m_Name: Tile21
   m_TagString: Untagged
@@ -12103,6 +12185,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1246609677
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246609673}
+  m_CullTransparentMesh: 0
 --- !u!1 &1249953254
 GameObject:
   m_ObjectHideFlags: 0
@@ -13618,6 +13708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561792748}
   - component: {fileID: 1561792749}
+  - component: {fileID: 1561792751}
   m_Layer: 8
   m_Name: Tile33
   m_TagString: Untagged
@@ -13670,6 +13761,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1561792751
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561792747}
+  m_CullTransparentMesh: 0
 --- !u!1 &1577434410
 GameObject:
   m_ObjectHideFlags: 0
@@ -15633,6 +15732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744827225}
   - component: {fileID: 1744827226}
+  - component: {fileID: 1744827228}
   m_Layer: 8
   m_Name: Tile41
   m_TagString: Untagged
@@ -15685,6 +15785,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1744827228
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744827224}
+  m_CullTransparentMesh: 0
 --- !u!1 &1747097956
 GameObject:
   m_ObjectHideFlags: 0
@@ -15829,6 +15937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762867312}
   - component: {fileID: 1762867313}
+  - component: {fileID: 1762867315}
   m_Layer: 8
   m_Name: Tile11
   m_TagString: Untagged
@@ -15881,6 +15990,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1762867315
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762867311}
+  m_CullTransparentMesh: 0
 --- !u!1 &1785463963
 GameObject:
   m_ObjectHideFlags: 0
@@ -17228,6 +17345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978405449}
   - component: {fileID: 1978405450}
+  - component: {fileID: 1978405452}
   m_Layer: 8
   m_Name: Tile22
   m_TagString: Untagged
@@ -17280,6 +17398,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1978405452
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978405448}
+  m_CullTransparentMesh: 0
 --- !u!1 &1987524461
 GameObject:
   m_ObjectHideFlags: 0
@@ -17290,6 +17416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987524462}
   - component: {fileID: 1987524463}
+  - component: {fileID: 1987524465}
   m_Layer: 8
   m_Name: Tile32
   m_TagString: Untagged
@@ -17342,6 +17469,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &1987524465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987524461}
+  m_CullTransparentMesh: 0
 --- !u!1 &1993429434
 GameObject:
   m_ObjectHideFlags: 0
@@ -17757,6 +17892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013418952}
   - component: {fileID: 2013418953}
+  - component: {fileID: 2013418955}
   m_Layer: 8
   m_Name: Tile43
   m_TagString: Untagged
@@ -17809,6 +17945,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 77.956696, y: 78.17903}
   m_EdgeRadius: 0
+--- !u!222 &2013418955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013418951}
+  m_CullTransparentMesh: 0
 --- !u!1 &2020726013
 GameObject:
   m_ObjectHideFlags: 0
