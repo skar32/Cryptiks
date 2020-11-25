@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Screens/Puzzle Screens/Puzzle Screen Templates/PuzzleScreen3x3_Unsolved.unity
+- path: Assets/Scenes/Screens/PuzzleSelectionScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
