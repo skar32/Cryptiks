@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class PuzzleTileScript : MonoBehaviour
 {
-    public Color baseBorderColor;
-    public Color correctBorderColor;
     private GameObject tileCounterpart;
     private bool borderHighlighted;
 
@@ -45,13 +43,19 @@ public class PuzzleTileScript : MonoBehaviour
 
     IEnumerator RemoveBorderHighlight()
     {
-        float t = 0f;
-        while (t <= 1f)
+        StartCoroutine(FadeInAndFadeOut(0.4f, this.gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>(), this.gameObject.transform.GetChild(0).GetChild(2).GetComponent<Image>()));
+        yield return null;
+    }
+
+    public IEnumerator FadeInAndFadeOut(float t, Image FadeIn, Image FadeOut)
+    {
+        FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, 0);
+        FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, 1);
+        while (FadeIn.color.a < 1.0f && FadeOut.color.a > 0.0f)
         {
-            // border.GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
-            this.gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(correctBorderColor, baseBorderColor, t);
-            t += Time.deltaTime;
-            yield return new WaitForSeconds(0.001f);
+            FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, FadeIn.color.a + (Time.deltaTime / t));
+            FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, FadeOut.color.a - (Time.deltaTime / t));
+            yield return null;
         }
     }
 }

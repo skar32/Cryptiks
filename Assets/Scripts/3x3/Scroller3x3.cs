@@ -56,7 +56,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 Debug.Log("Switching to horizontal");
                 _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
-                UpdateRowTiles(); // update the row tiles with the right letters before switching to it
+                StartCoroutine(UpdateRowTiles()); // update the row tiles with the right letters before switching to it
 
                 rows.GetComponent<CanvasGroup>().alpha = 1f;
                 rows.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -84,7 +84,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             Debug.Log("Switching to vertical");
             _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
-            UpdateColumnTiles(); // update the column tiles with the right letters before switching to it
+            StartCoroutine(UpdateColumnTiles()); // update the column tiles with the right letters before switching to it
 
             rows.GetComponent<CanvasGroup>().alpha = 0f;
             rows.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -127,9 +127,9 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
 
         if (rows.GetComponent<CanvasGroup>().alpha == 0f) {
-            UpdateRowTiles();
+            StartCoroutine(UpdateRowTiles());
         } else if (columns.GetComponent<CanvasGroup>().alpha == 0f) {
-            UpdateColumnTiles();
+            StartCoroutine(UpdateColumnTiles());
         }
 
         StartCoroutine(highlightingScript.CheckForWords());
@@ -152,8 +152,10 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
     }
 
-    public void UpdateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
+    IEnumerator UpdateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
     {
+        yield return new WaitForSeconds(0.2f);
+        
         Debug.Log("updating row tiles");
         
         Collider2D[] results;
@@ -197,8 +199,10 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         rowTileText.text = colTileText.text;
     }
 
-    public void UpdateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
+    IEnumerator UpdateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
     {
+        yield return new WaitForSeconds(0.2f);
+        
         Debug.Log("updating column tiles");
 
         Collider2D[] results;
@@ -248,7 +252,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         colText = null;
         foreach (Collider2D collider in results) {
             GameObject curr = collider.gameObject;
-            Debug.Log(curr.gameObject.name);
+            //Debug.Log(curr.gameObject.name);
             if (curr.tag == "Row") {
                 GameObject rowTileCanvas = curr.transform.GetChild(0).gameObject;
                 GameObject rowTileTextObject = rowTileCanvas.transform.GetChild(0).gameObject;
@@ -259,6 +263,6 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 colText = colTileTextObject.GetComponent<TMP_Text>(); 
             }
         }
-        Debug.Log("break");
+        //Debug.Log("break");
     }
 }

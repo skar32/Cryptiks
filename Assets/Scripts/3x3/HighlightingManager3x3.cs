@@ -9,14 +9,15 @@ public class HighlightingManager3x3 : MonoBehaviour
 {
     public GameObject Tile11, Tile12, Tile13, Tile21, Tile22, Tile23, Tile31, Tile32, Tile33;
     public string[] correctLetters;
-    public Color baseBorderColor;
-    public Color correctBorderColor;
     public GameObject[] letterTexts;
+    public Image unsolvedScreen, solvedScreen;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9;
+    private bool[] allLetters;
 
     void Start()
     {
-        //StartCoroutine(CheckForWords());
+        StartCoroutine(CheckForWords());
+        allLetters = new bool[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9};
     }
 
     public IEnumerator CheckForWords()
@@ -92,7 +93,7 @@ public class HighlightingManager3x3 : MonoBehaviour
         results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.3f); // Tile33
         FindTiles(results, out rowTile9Text, out colTile9Text, out rowTile9, out colTile9);
 
-        // Debug.Log(rowTile1Text.text + rowTile2Text.text + rowTile3Text.text + rowTile4Text.text + rowTile5Text.text + rowTile6Text.text + rowTile7Text.text + rowTile8Text.text + rowTile9Text.text);
+        Debug.Log(rowTile1Text.text + rowTile2Text.text + rowTile3Text.text + rowTile4Text.text + rowTile5Text.text + rowTile6Text.text + rowTile7Text.text + rowTile8Text.text + rowTile9Text.text);
 
         // check for correct letter placements
         if (rowTile1Text.text == correctLetters[0] && colTile1Text.text == correctLetters[0] && (!rowTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight()))         
@@ -100,22 +101,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile1.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile1.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile1.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile1.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile1.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile1.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter1) {
                 letter1 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[0].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[0].GetComponent<TMP_Text>()));
             }
         }
 
@@ -124,45 +115,26 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile2.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile2.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile2.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile2.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile2.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile2.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter2) {
                 letter2 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[1].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[1].GetComponent<TMP_Text>()));
             }
         }
 
         if (rowTile3Text.text == correctLetters[2] && colTile3Text.text == correctLetters[2] && (!rowTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight()))         {
+            
             rowTile3.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile3.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile3.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile3.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile3.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile3.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter3) {
                 letter3 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[2].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[2].GetComponent<TMP_Text>()));
             }
         }
 
@@ -171,22 +143,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile4.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile4.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile4.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile4.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile4.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile4.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter4) {
                 letter4 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[3].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[3].GetComponent<TMP_Text>()));
             }
         }
 
@@ -195,22 +157,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile5.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile5.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile5.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile5.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile5.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile5.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter5) {
                 letter5 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[4].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[4].GetComponent<TMP_Text>()));
             }
         }
 
@@ -219,22 +171,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile6.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile6.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile6.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile6.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile6.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile6.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter6) {
                 letter6 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[5].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[5].GetComponent<TMP_Text>()));
             }
         }
 
@@ -243,22 +185,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile7.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile7.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile7.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile7.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile7.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile7.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter7) {
                 letter7 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[6].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[6].GetComponent<TMP_Text>()));
             }
         }
 
@@ -267,22 +199,12 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile8.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile8.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile8.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile8.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile8.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile8.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter8) {
                 letter8 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[7].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[7].GetComponent<TMP_Text>()));
             }
         }
 
@@ -291,25 +213,34 @@ public class HighlightingManager3x3 : MonoBehaviour
             rowTile9.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile9.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
-            float t = 0f;
-            while (t <= 1f)
-            {
-                rowTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-                colTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>().color = Color.Lerp(baseBorderColor, correctBorderColor, t);
-
-                // rowTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-                // colTile9.GetComponent<Image>().color = Color.Lerp(baseTileColor, correctWordColor, t);
-
-
-                t += Time.deltaTime;
-                yield return new WaitForSeconds(0.001f);
-            }
+            StartCoroutine(FadeInAndFadeOut(0.4f, rowTile9.transform.GetChild(0).GetChild(2).GetComponent<Image>(), rowTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
+            StartCoroutine(FadeInAndFadeOut(0.4f, colTile9.transform.GetChild(0).GetChild(2).GetComponent<Image>(), colTile9.transform.GetChild(0).GetChild(1).GetComponent<Image>()));
 
             if (!letter9) {
                 letter9 = true;
-                StartCoroutine(FadeTextToFullAlpha(1f, letterTexts[8].GetComponent<TMP_Text>()));
+                StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[8].GetComponent<TMP_Text>()));
             }
         }
+
+        allLetters = new bool[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9};
+
+        // check if all letters are in the right position
+        if (CheckAllLetters(allLetters)) 
+        {
+            yield return new WaitForSeconds(1.0f);
+            StartCoroutine(FadeInAndFadeOut(2f, solvedScreen, unsolvedScreen));
+        }
+    }
+
+     private bool CheckAllLetters(bool[] letterList)
+    {
+        foreach (bool letter in letterList) {
+            Debug.Log(letter);
+            if (!letter) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void FindTiles(Collider2D[] results, out TMP_Text rowText, out TMP_Text colText, out GameObject rowTile, out GameObject colTile) // helper method for updating tile text after mouse drag ends and a shift occurs
@@ -341,6 +272,18 @@ public class HighlightingManager3x3 : MonoBehaviour
         while (text.color.a < 1.0f)
         {
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeInAndFadeOut(float t, Image FadeIn, Image FadeOut)
+    {
+        FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, 0);
+        FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, 1);
+        while (FadeIn.color.a < 1.0f && FadeOut.color.a > 0.0f)
+        {
+            FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, FadeIn.color.a + (Time.deltaTime / t));
+            FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, FadeOut.color.a - (Time.deltaTime / t));
             yield return null;
         }
     }

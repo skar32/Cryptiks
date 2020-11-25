@@ -8,6 +8,19 @@ TagManager:
   - Row
   - ColumnScroll
   - RowScroll
+  - Air
+  - Water
+  - Fire
+  - Earth
+  - Readings
+  - Moon
+  - Sun
+  - Wheel of Fortune
+  - Hanged Man
+  - Justice
+  - Star
+  - World
+  - Devil
   layers:
   - Default
   - TransparentFX
