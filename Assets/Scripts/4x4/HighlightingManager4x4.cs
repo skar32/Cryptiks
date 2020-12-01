@@ -10,7 +10,10 @@ public class HighlightingManager4x4 : MonoBehaviour
     public GameObject Tile11, Tile12, Tile13, Tile14, Tile21, Tile22, Tile23, Tile24, Tile31, Tile32, Tile33, Tile34, Tile41, Tile42, Tile43, Tile44;
     public string[] correctLetters;
     public GameObject[] letterTexts;
-    public Image unsolvedScreen, solvedScreen;
+    public GraphicRaycaster tileGrid;
+    public Image unsolvedScreen, solvedScreen, blackOut, unsolvedArcana, solvedArcana;
+    public CanvasGroup columnsGroup, rowsGroup, puzzleCompletePopUp;
+    public GameObject backMenu, puzzleCompleteMenu;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16;
     private bool[] allLetters;
 
@@ -22,7 +25,7 @@ public class HighlightingManager4x4 : MonoBehaviour
 
     public IEnumerator CheckForWords()
     {        
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.6f);
 
         Collider2D[] results;
 
@@ -374,8 +377,22 @@ public class HighlightingManager4x4 : MonoBehaviour
         // check if all letters are in the right position
         if (CheckAllLetters(allLetters)) 
         {
+            tileGrid.enabled = true;
+            puzzleCompleteMenu.SetActive(true);
+            backMenu.SetActive(false);
             yield return new WaitForSeconds(1.0f);
             StartCoroutine(FadeInAndFadeOut(2f, solvedScreen, unsolvedScreen));
+            StartCoroutine(FadeInAndFadeOut(2f, solvedArcana, unsolvedArcana));
+            yield return new WaitForSeconds(2.5f);
+            StartCoroutine(FadeIn(2f, blackOut, 0.7f));
+            yield return new WaitForSeconds(0.2f);
+            while (puzzleCompletePopUp.alpha < 1.0f)
+            {
+                puzzleCompletePopUp.alpha = puzzleCompletePopUp.alpha + (Time.deltaTime / 2.0f);
+                yield return null;
+            }
+            puzzleCompletePopUp.interactable = true;
+            puzzleCompletePopUp.blocksRaycasts = true;
         }
     }
 
@@ -423,14 +440,24 @@ public class HighlightingManager4x4 : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeInAndFadeOut(float t, Image FadeIn, Image FadeOut)
+    public IEnumerator FadeInAndFadeOut(float t, Image fadeIn, Image fadeOut)
     {
-        FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, 0);
-        FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, 1);
-        while (FadeIn.color.a < 1.0f && FadeOut.color.a > 0.0f)
+        fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, 0);
+        fadeOut.color = new Color(fadeOut.color.r, fadeOut.color.g, fadeOut.color.b, 1);
+        while (fadeIn.color.a < 1.0f && fadeOut.color.a > 0.0f)
         {
-            FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, FadeIn.color.a + (Time.deltaTime / t));
-            FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, FadeOut.color.a - (Time.deltaTime / t));
+            fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, fadeIn.color.a + (Time.deltaTime / t));
+            fadeOut.color = new Color(fadeOut.color.r, fadeOut.color.g, fadeOut.color.b, fadeOut.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeIn(float t, Image fadeIn, float alphaAmount)
+    {
+        fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, 0);
+        while (fadeIn.color.a < alphaAmount)
+        {
+            fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, fadeIn.color.a + (Time.deltaTime / t));
             yield return null;
         }
     }

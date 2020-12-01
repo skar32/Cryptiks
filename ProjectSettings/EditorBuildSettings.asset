@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Soham Kar/PuzzleScreenTestNoScale_Unsolved.unity
-    guid: c26dea3b3191948428d7c63ba8073b88
+    path: Assets/Scenes/Screens/Puzzle Screens/Puzzle Screen Templates/PuzzleScreen4x4_Unsolved.unity
+    guid: feff40f1a4ed43b48905d52324e23637
+  - enabled: 1
+    path: Assets/Scenes/Screens/PuzzleSelectionScreen.unity
+    guid: 6992aad3574489245b080a6688e3f3b1
   m_configObjects: {}
