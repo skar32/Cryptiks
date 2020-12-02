@@ -112,7 +112,7 @@ public class HighlightingManager3x3 : MonoBehaviour
                 letter1 = true;
                 StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[0].GetComponent<TMP_Text>()));
             }
-        }
+        } 
 
         if (rowTile2Text.text == correctLetters[1] && colTile2Text.text == correctLetters[1] && (!rowTile2.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile2.GetComponent<PuzzleTileScript>().GetBorderHighlight())) 
         {
@@ -128,8 +128,8 @@ public class HighlightingManager3x3 : MonoBehaviour
             }
         }
 
-        if (rowTile3Text.text == correctLetters[2] && colTile3Text.text == correctLetters[2] && (!rowTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight()))         {
-            
+        if (rowTile3Text.text == correctLetters[2] && colTile3Text.text == correctLetters[2] && (!rowTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight()))         
+        {
             rowTile3.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
             colTile3.GetComponent<PuzzleTileScript>().SetBorderHighlight(true);
 
@@ -140,7 +140,7 @@ public class HighlightingManager3x3 : MonoBehaviour
                 letter3 = true;
                 StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[2].GetComponent<TMP_Text>()));
             }
-        }
+        } 
 
         if (rowTile4Text.text == correctLetters[3] && colTile4Text.text == correctLetters[3] && (!rowTile4.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile4.GetComponent<PuzzleTileScript>().GetBorderHighlight())) 
         {
@@ -182,7 +182,7 @@ public class HighlightingManager3x3 : MonoBehaviour
                 letter6 = true;
                 StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[5].GetComponent<TMP_Text>()));
             }
-        }
+        } 
 
         if (rowTile7Text.text == correctLetters[6] && colTile7Text.text == correctLetters[6] && (!rowTile7.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile7.GetComponent<PuzzleTileScript>().GetBorderHighlight())) 
         {
@@ -196,7 +196,7 @@ public class HighlightingManager3x3 : MonoBehaviour
                 letter7 = true;
                 StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[6].GetComponent<TMP_Text>()));
             }
-        }
+        } 
 
         if (rowTile8Text.text == correctLetters[7] && colTile8Text.text == correctLetters[7] && (!rowTile8.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile8.GetComponent<PuzzleTileScript>().GetBorderHighlight())) 
         {
@@ -224,12 +224,12 @@ public class HighlightingManager3x3 : MonoBehaviour
                 letter9 = true;
                 StartCoroutine(FadeTextToFullAlpha(0.4f, letterTexts[8].GetComponent<TMP_Text>()));
             }
-        }
+        } 
 
-        allLetters = new bool[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9};
+        bool[] allTiles = new bool[] {colTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile2.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile4.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile5.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile6.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile7.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile8.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile9.GetComponent<PuzzleTileScript>().GetBorderHighlight()};
 
         // check if all letters are in the right position
-        if (CheckAllLetters(allLetters)) 
+        if (CheckAllLetters(allTiles)) 
         {
             tileGrid.enabled = true;
             backButton.interactable = false;
@@ -254,7 +254,6 @@ public class HighlightingManager3x3 : MonoBehaviour
      private bool CheckAllLetters(bool[] letterList)
     {
         foreach (bool letter in letterList) {
-            Debug.Log(letter);
             if (!letter) {
                 return false;
             }
@@ -291,6 +290,16 @@ public class HighlightingManager3x3 : MonoBehaviour
         while (text.color.a < 1.0f)
         {
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+
+     public IEnumerator FadeTextToZeroAlpha(float t, TMP_Text text)
+    {
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        while (text.color.a > 0.0f)
+        {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime / t));
             yield return null;
         }
     }

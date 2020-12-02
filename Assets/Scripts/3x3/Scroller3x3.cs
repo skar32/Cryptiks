@@ -56,7 +56,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 Debug.Log("Switching to horizontal");
                 _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
-                StartCoroutine(UpdateRowTiles()); // update the row tiles with the right letters before switching to it
+                UpdateRowTiles(); // update the row tiles with the right letters before switching to it
 
                 rows.GetComponent<CanvasGroup>().alpha = 1f;
                 rows.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -84,7 +84,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             Debug.Log("Switching to vertical");
             _myScrollRect.enabled = false; //disable the current scroll rect so it doesnt move.
 
-            StartCoroutine(UpdateColumnTiles()); // update the column tiles with the right letters before switching to it
+            UpdateColumnTiles(); // update the column tiles with the right letters before switching to it
 
             rows.GetComponent<CanvasGroup>().alpha = 0f;
             rows.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -127,9 +127,9 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
 
         if (rows.GetComponent<CanvasGroup>().alpha == 0f) {
-            StartCoroutine(UpdateRowTiles());
+            UpdateRowTiles();
         } else if (columns.GetComponent<CanvasGroup>().alpha == 0f) {
-            StartCoroutine(UpdateColumnTiles());
+            UpdateColumnTiles();
         }
 
         StartCoroutine(highlightingScript.CheckForWords());
@@ -152,9 +152,9 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
     }
 
-    IEnumerator UpdateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
+    public void UpdateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
     {
-        yield return new WaitForSeconds(0.2f);
+        // yield return new WaitForSeconds(0.2f);
         
         Debug.Log("updating row tiles");
         
@@ -199,9 +199,9 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         rowTileText.text = colTileText.text;
     }
 
-    IEnumerator UpdateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
+    public void UpdateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
     {
-        yield return new WaitForSeconds(0.2f);
+        // yield return new WaitForSeconds(0.2f);
         
         Debug.Log("updating column tiles");
 
