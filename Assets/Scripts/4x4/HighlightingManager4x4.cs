@@ -14,6 +14,7 @@ public class HighlightingManager4x4 : MonoBehaviour
     public Image unsolvedScreen, solvedScreen, blackOut, unsolvedArcana, solvedArcana;
     public CanvasGroup columnsGroup, rowsGroup, puzzleCompletePopUp;
     public GameObject backMenu, puzzleCompleteMenu;
+    public Button backButton;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16;
     private bool[] allLetters;
 
@@ -378,17 +379,18 @@ public class HighlightingManager4x4 : MonoBehaviour
         if (CheckAllLetters(allLetters)) 
         {
             tileGrid.enabled = true;
+            backButton.interactable = false;
             puzzleCompleteMenu.SetActive(true);
             backMenu.SetActive(false);
             yield return new WaitForSeconds(1.0f);
-            StartCoroutine(FadeInAndFadeOut(2f, solvedScreen, unsolvedScreen));
-            StartCoroutine(FadeInAndFadeOut(2f, solvedArcana, unsolvedArcana));
+            StartCoroutine(FadeInAndFadeOut(1.0f, solvedScreen, unsolvedScreen));
+            StartCoroutine(FadeInAndFadeOut(1.0f, solvedArcana, unsolvedArcana));
             yield return new WaitForSeconds(2.5f);
-            StartCoroutine(FadeIn(2f, blackOut, 0.7f));
+            StartCoroutine(FadeIn(1.0f, blackOut, 0.7f));
             yield return new WaitForSeconds(0.2f);
             while (puzzleCompletePopUp.alpha < 1.0f)
             {
-                puzzleCompletePopUp.alpha = puzzleCompletePopUp.alpha + (Time.deltaTime / 2.0f);
+                puzzleCompletePopUp.alpha = puzzleCompletePopUp.alpha + (Time.deltaTime / 1.0f);
                 yield return null;
             }
             puzzleCompletePopUp.interactable = true;

@@ -10,7 +10,11 @@ public class HighlightingManager3x3 : MonoBehaviour
     public GameObject Tile11, Tile12, Tile13, Tile21, Tile22, Tile23, Tile31, Tile32, Tile33;
     public string[] correctLetters;
     public GameObject[] letterTexts;
-    public Image unsolvedScreen, solvedScreen;
+    public GraphicRaycaster tileGrid;
+    public Image unsolvedScreen, solvedScreen, blackOut, unsolvedArcana, solvedArcana;
+    public CanvasGroup columnsGroup, rowsGroup, puzzleCompletePopUp;
+    public GameObject backMenu, puzzleCompleteMenu;
+    public Button backButton;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9;
     private bool[] allLetters;
 
@@ -227,8 +231,23 @@ public class HighlightingManager3x3 : MonoBehaviour
         // check if all letters are in the right position
         if (CheckAllLetters(allLetters)) 
         {
+            tileGrid.enabled = true;
+            backButton.interactable = false;
+            puzzleCompleteMenu.SetActive(true);
+            backMenu.SetActive(false);
             yield return new WaitForSeconds(1.0f);
-            StartCoroutine(FadeInAndFadeOut(2f, solvedScreen, unsolvedScreen));
+            StartCoroutine(FadeInAndFadeOut(1.0f, solvedScreen, unsolvedScreen));
+            StartCoroutine(FadeInAndFadeOut(1.0f, solvedArcana, unsolvedArcana));
+            yield return new WaitForSeconds(2.5f);
+            StartCoroutine(FadeIn(1.0f, blackOut, 0.7f));
+            yield return new WaitForSeconds(0.2f);
+            while (puzzleCompletePopUp.alpha < 1.0f)
+            {
+                puzzleCompletePopUp.alpha = puzzleCompletePopUp.alpha + (Time.deltaTime / 1.0f);
+                yield return null;
+            }
+            puzzleCompletePopUp.interactable = true;
+            puzzleCompletePopUp.blocksRaycasts = true;
         }
     }
 
@@ -284,6 +303,16 @@ public class HighlightingManager3x3 : MonoBehaviour
         {
             FadeIn.color = new Color(FadeIn.color.r, FadeIn.color.g, FadeIn.color.b, FadeIn.color.a + (Time.deltaTime / t));
             FadeOut.color = new Color(FadeOut.color.r, FadeOut.color.g, FadeOut.color.b, FadeOut.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+
+     public IEnumerator FadeIn(float t, Image fadeIn, float alphaAmount)
+    {
+        fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, 0);
+        while (fadeIn.color.a < alphaAmount)
+        {
+            fadeIn.color = new Color(fadeIn.color.r, fadeIn.color.g, fadeIn.color.b, fadeIn.color.a + (Time.deltaTime / t));
             yield return null;
         }
     }

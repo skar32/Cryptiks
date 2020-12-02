@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CancelReturnToMenu : MonoBehaviour
 {
     private Slider cancelSlider;
-    public CanvasGroup confirmationPopUp, columnsGroup, rowsGroup;
+    public CanvasGroup confirmationPopUp;
     public GraphicRaycaster tileGrid;
     public Image blackout;
     public Button backButton;

@@ -4737,6 +4737,7 @@ MonoBehaviour:
   puzzleCompletePopUp: {fileID: 299439192}
   backMenu: {fileID: 1573130166}
   puzzleCompleteMenu: {fileID: 299439187}
+  backButton: {fileID: 815487335}
 --- !u!114 &304319345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8304,7 +8305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8361,7 +8362,6 @@ GameObject:
   - component: {fileID: 535758617}
   - component: {fileID: 535758616}
   - component: {fileID: 535758615}
-  - component: {fileID: 535758614}
   m_Layer: 5
   m_Name: BackButtonSolved
   m_TagString: Untagged
@@ -8388,25 +8388,6 @@ RectTransform:
   m_AnchoredPosition: {x: -328.5, y: -838.4}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &535758614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535758612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d696481124fbd44b2ad519e934d3ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  tileGrid: {fileID: 0}
-  transitionTime: 0
-  blackout: {fileID: 0}
-  confirmationPopUp: {fileID: 0}
-  columnsGroup: {fileID: 0}
-  rowsGroup: {fileID: 0}
 --- !u!114 &535758615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8449,19 +8430,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 535758616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 535758614}
-        m_TargetAssemblyTypeName: PuzzleScreenBackButton, Assembly-CSharp
-        m_MethodName: ReturnToMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &535758616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8469,7 +8438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535758612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11387,8 +11356,6 @@ MonoBehaviour:
   transitionTime: 1
   blackout: {fileID: 940897889}
   confirmationPopUp: {fileID: 1573130168}
-  columnsGroup: {fileID: 843375661}
-  rowsGroup: {fileID: 1991583573}
 --- !u!1 &828882541
 GameObject:
   m_ObjectHideFlags: 0
@@ -12840,7 +12807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -15308,7 +15275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -17995,7 +17962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -18226,7 +18193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21611,7 +21578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -27036,8 +27003,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationPopUp: {fileID: 1573130168}
-  columnsGroup: {fileID: 843375661}
-  rowsGroup: {fileID: 1991583573}
   tileGrid: {fileID: 374830454}
   blackout: {fileID: 940897889}
   backButton: {fileID: 815487335}

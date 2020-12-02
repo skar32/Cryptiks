@@ -11,7 +11,7 @@ public class PuzzleScreenBackButton : MonoBehaviour
     public GraphicRaycaster tileGrid;
     public float transitionTime;
     public Image blackout;
-    public CanvasGroup confirmationPopUp, columnsGroup, rowsGroup;
+    public CanvasGroup confirmationPopUp;
 
     void Awake()
     {
