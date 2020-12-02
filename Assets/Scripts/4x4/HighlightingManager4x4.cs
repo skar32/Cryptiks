@@ -373,10 +373,10 @@ public class HighlightingManager4x4 : MonoBehaviour
             }
         }
 
-        allLetters = new bool[] {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16};
+        bool[] allTiles = new bool[] {colTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile2.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile3.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile4.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile5.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile6.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile7.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile8.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile9.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile10.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile11.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile12.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile13.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile14.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile15.GetComponent<PuzzleTileScript>().GetBorderHighlight(), colTile16.GetComponent<PuzzleTileScript>().GetBorderHighlight()};
 
         // check if all letters are in the right position
-        if (CheckAllLetters(allLetters)) 
+        if (CheckAllLetters(allTiles)) 
         {
             tileGrid.enabled = true;
             backButton.interactable = false;
@@ -401,7 +401,6 @@ public class HighlightingManager4x4 : MonoBehaviour
     private bool CheckAllLetters(bool[] letterList)
     {
         foreach (bool letter in letterList) {
-            Debug.Log(letter);
             if (!letter) {
                 return false;
             }
