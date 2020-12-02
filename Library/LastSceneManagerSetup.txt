@@ -1,5 +1,6 @@
 sceneSetups:
 - path: Assets/Scenes/Screens/Puzzle Screens/4x4Puzzles/BalanceTheScales4x4.unity
+- path: Assets/Scenes/Screens/PuzzleSelectionScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
