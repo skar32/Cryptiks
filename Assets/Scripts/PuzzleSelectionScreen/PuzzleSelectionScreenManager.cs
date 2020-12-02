@@ -7,10 +7,19 @@ using TMPro;
 public class PuzzleSelectionScreenManager : MonoBehaviour
 {
     public TMP_Text elementText, arcanaText;
-    public GameObject elementsList, arcanaList;
+    public GameObject elementsList, airArcanaList, fireArcanaList, waterArcanaList, earthArcanaList;
+    private GameObject currArcanaList;
     private GameObject currElement;
     private GameObject currArcana;
     private string currElementSelected, currArcanaSelected;
+    private string lastElementSelected, lastArcanaSelected;
+
+    void Awake()
+    {
+        lastElementSelected = "Air";
+        lastArcanaSelected = "Justice";
+        currArcanaList = airArcanaList;
+    }
 
     void Update()
     {
@@ -23,73 +32,143 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 elementText.text = currElement.tag.ToUpper();
             }
         }
+
+        // If the element isn't the same, do some updates
+        if (lastElementSelected != currElementSelected) {
+            changeElement(currElementSelected);
+        }
+
         // check what arcana is currently selected
-        foreach (Transform child in arcanaList.transform) 
+        foreach (Transform child in currArcanaList.transform) 
         {
             if (child.transform.localPosition.z < 30) {
                 currArcana = child.gameObject;
                 currArcanaSelected = currArcana.gameObject.tag;
-               arcanaText.text = "THE " + currArcana.tag.ToUpper();
+               arcanaText.text = currArcana.tag.ToUpper();
             }
         }
 
-        // do stuff depending on current element and current arcana selected
-        switch (currElementSelected) {
+        // If the arcana isn't the same, do some updates
+        if (lastArcanaSelected != currArcanaSelected) {
+            changeArcana(currArcanaSelected, currElementSelected);
+        }
+        
+    }
+
+    void changeElement(string newElement) {
+        lastElementSelected = newElement;
+        switch (newElement) {
             case "Air":
                 Debug.Log("Air is selected!");
-                // do stuff if Air element is selected
+                // Switch the Arcana lists to Air
+                currArcanaList = airArcanaList;
+                airArcanaList.transform.parent.parent.gameObject.SetActive(true);
+                fireArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                earthArcanaList.transform.parent.parent.gameObject.SetActive(false);
                 break;
             case "Fire":
                 Debug.Log("Fire is selected!");
-                // do stuff if Fire element is selected
+                // Switch the Arcana lists to Fire
+                currArcanaList = fireArcanaList;
+                airArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                fireArcanaList.transform.parent.parent.gameObject.SetActive(true);
+                waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                earthArcanaList.transform.parent.parent.gameObject.SetActive(false);
                 break;
             case "Water":
                 Debug.Log("Water is selected!");
-                // do stuff if Water element is selected
+                // Switch the Arcana lists to Water
+                currArcanaList = waterArcanaList;
+                airArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                fireArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                waterArcanaList.transform.parent.parent.gameObject.SetActive(true);
+                earthArcanaList.transform.parent.parent.gameObject.SetActive(false);
                 break;
             case "Earth":
                 Debug.Log("Earth is selected!");
-                // do stuff if Earth element is selected
+                // Switch the Arcana lists to Earth
+                currArcanaList = earthArcanaList;
+                airArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                fireArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                earthArcanaList.transform.parent.parent.gameObject.SetActive(true);
                 break;
-            case "Readings":
-                Debug.Log("Readings is selected!");
-                // do stuff if Readings is selected
-                break;
-        }
-        switch (currArcanaSelected) {
-            case "Justice":
-                Debug.Log("Justice is selected!");
-                // do stuff if Justice arcana is selected
-                break;
-            case "Wheel of Fortune":
-                Debug.Log("Wheel of Fortune is selected!");
-                // do stuff if Wheel of Fortune arcana is selected
-                break;
-            case "Hanged Man":
-                Debug.Log("Hanged Man is selected!");
-                // do stuff if Hanged Man arcana is selected
-                break;
-            case "Devil":
-                Debug.Log("Devil is selected!");
-                // do stuff if Devil arcana is selected
-                break;
-            case "Moon":
-                Debug.Log("Moon is selected!");
-                // do stuff if Moon arcana is selected
-                break;
-            case "Sun":
-                Debug.Log("Sun is selected!");
-                // do stuff if Sun arcana is selected
-                break;
-            case "Star":
-                Debug.Log("Star is selected!");
-                // do stuff if Star arcana is selected
-                break;
-            case "World":
-                Debug.Log("World is selected!");
-                // do stuff if World arcana is selected
+            default:
+                Debug.Log("Bro what");
                 break;
         }
+    }
+
+    void changeArcana(string newArcana, string currElementText) {
+        lastArcanaSelected = newArcana;
+
+        switch (currElementText) {
+            case "Air":
+                switch (newArcana) {
+                    case "Justice":
+                        Debug.Log("Justice is selected!");
+                        // do stuff if Justice arcana is selected
+                        break;
+                    case "Wheel of Fortune":
+                        Debug.Log("Wheel of Fortune is selected!");
+                        // do stuff if Wheel of Fortune arcana is selected
+                        break;
+                    default:
+                        Debug.Log("You got " + newArcana + " in " + currElementText);
+                        break;
+                }
+                break;
+            case "Fire":
+                 switch (newArcana) {
+                    case "Hanged Man":
+                        Debug.Log("Hanged Man is selected!");
+                        // do stuff if Justice arcana is selected
+                        break;
+                    case "Devil":
+                        Debug.Log("Devil is selected!");
+                        // do stuff if Wheel of Fortune arcana is selected
+                        break;
+                    default:
+                        Debug.Log("You got " + newArcana + " in " + currElementText);
+                        break;
+                }
+                break;
+            case "Water":
+                 switch (newArcana) {
+                    case "Star":
+                        Debug.Log("Star is selected!");
+                        // do stuff if Justice arcana is selected
+                        break;
+                    case "World":
+                        Debug.Log("World is selected!");
+                        // do stuff if Wheel of Fortune arcana is selected
+                        break;
+                    default:
+                        Debug.Log("You got " + newArcana + " in " + currElementText);
+                        break;
+                }
+                break;
+            case "Earth":
+                switch (newArcana) {
+                    case "Moon":
+                        Debug.Log("Moon is selected!");
+                        // do stuff if Justice arcana is selected
+                        break;
+                    case "Sun":
+                        Debug.Log("Sun is selected!");
+                        // do stuff if Wheel of Fortune arcana is selected
+                        break;
+                    default:
+                        Debug.Log("You got " + newArcana + " in " + currElementText);
+                        break;
+                }
+                break;
+            default:
+                Debug.Log("bruh what");
+                break;
+        }
+        
     }
 
     public IEnumerator FadeTextToFullAlpha(float t, TMP_Text text)
