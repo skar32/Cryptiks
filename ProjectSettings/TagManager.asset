@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Col
+  - Row
+  - ColumnScroll
+  - RowScroll
+  - Air
+  - Water
+  - Fire
+  - Earth
+  - Readings
+  - Moon
+  - Sun
+  - Wheel of Fortune
+  - Hanged Man
+  - Justice
+  - Star
+  - World
+  - Devil
   layers:
   - Default
   - TransparentFX
@@ -13,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - TileDetector
   - 
   - 
   - 
