@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 using DanielLochner.Assets.SimpleScrollSnap;
 
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
 public class PuzzleSelectionScreenManager : MonoBehaviour
 {
     public TMP_Text elementText, arcanaText;
@@ -20,6 +24,27 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     private string currElementSelected, currArcanaSelected;
     private string lastElementSelected, lastArcanaSelected;
 
+    private string[] airArcana =
+    {
+        "Justice", "Fortune"
+    };
+
+    private string[] fireArcana =
+    {
+        "Hanged_Man", "Devil"
+    };
+
+    private string[] waterArcana =
+    {
+        "Star", "World"
+    };
+
+    private string[] earthArcana =
+    {
+        "Moon", "Sun"
+    };
+
+    // Keep in mind that the length of the each list needs to be the same (fill in empty ones with "")
     private string[][] airStageList =
     {
         new string[] { "Justice1", "Justice2", "Justice3", "Justice4", "" },
@@ -55,6 +80,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         lastElementSelected = "Air";
         lastArcanaSelected = "Justice";
         currArcanaList = airArcanaList;
+
         elementScroller.GoToPanel(currElementNumber);
         arcanaScroller.GoToPanel(currArcanaNumber);
         removeStages();
@@ -254,22 +280,28 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
 
     void generateStages(int elementNo, int arcanaNo) {
         string[] stageList;
+        string currentCard;
         switch (elementNo) {
             case 0:
                 stageList = airStageList[arcanaNo];
+                currentCard = airArcana[arcanaNo];
                 break;
             case 1:
                 stageList = fireStageList[arcanaNo];
+                currentCard = fireArcana[arcanaNo];
                 break;
             case 2:
                 stageList = waterStageList[arcanaNo];
+                currentCard = waterArcana[arcanaNo];
                 break;
             case 3:
                 stageList = earthStageList[arcanaNo];
+                currentCard = earthArcana[arcanaNo];
                 break;
             default:
                 Debug.Log("Probably in Readings");
                 stageList = new string[] {""};
+                currentCard = "";
                 break;
         }
         int numStages = 0;
@@ -282,6 +314,16 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             GameObject newStage = Instantiate(stagePrefab, stageLocations.transform);
 
             TMP_Text stageTextComponent = getTextComponent(newStage);
+
+            Image stageImage = getImageComponent(newStage);
+            string imagePath = "Art/Arcana_Icons/" + currentCard + "/" + currentCard + "_";
+
+            // TODO: Need to check what state the stage card is in
+            // Assume completion for now
+            string currState = "Complete";
+            imagePath = imagePath + currState;
+
+            stageImage.sprite = Resources.Load<Sprite>(imagePath);
 
             if (stageTextComponent) {
                 stageTextComponent.text = stage;
@@ -307,6 +349,17 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    Image getImageComponent(GameObject stage) {
+        Transform sliderTransform = null;
+        foreach (Transform t in stage.transform) {
+            if (t.tag == "Slider") {
+                sliderTransform = t;
+            }
+        }
+
+        return sliderTransform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<Image>();
     }
 
     public IEnumerator FadeTextToFullAlpha(float t, TMP_Text text)
