@@ -280,16 +280,12 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             }
             numStages++;
 
-            GameObject newStage = Instantiate(stagePrefab);
-
-
+            GameObject newStage = Instantiate(stagePrefab, stageLocations.transform);
 
             TMP_Text stageTextComponent = getTextComponent(newStage);
 
             if (stageTextComponent) {
                 stageTextComponent.text = stage;
-                newStage.transform.SetParent(stageLocations.transform);
-                newStage.transform.localScale = new Vector3(1f, 1f, 1f);
             } else {
                 Debug.Log("Yo prefabs are broken");
             }
