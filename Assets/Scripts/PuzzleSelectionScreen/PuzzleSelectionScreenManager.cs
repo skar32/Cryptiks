@@ -63,7 +63,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currArcanaNumber);
         // check what element is currently selected
         foreach (Transform child in elementsList.transform) 
         {
