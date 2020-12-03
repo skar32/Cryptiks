@@ -21,6 +21,7 @@ TagManager:
   - Star
   - World
   - Devil
+  - Title
   layers:
   - Default
   - TransparentFX
