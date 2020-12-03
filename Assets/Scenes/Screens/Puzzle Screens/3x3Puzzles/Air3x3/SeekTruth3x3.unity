@@ -985,7 +985,7 @@ RectTransform:
   m_GameObject: {fileID: 207475080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 610952293}
   m_RootOrder: 3
@@ -1339,7 +1339,7 @@ RectTransform:
   m_GameObject: {fileID: 227451829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 610952293}
   m_RootOrder: 4
@@ -1654,7 +1654,7 @@ RectTransform:
   m_GameObject: {fileID: 255122293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 338075430}
   m_RootOrder: 3
@@ -1906,7 +1906,7 @@ MonoBehaviour:
   pagination: {fileID: 0}
   toggleNavigation: 1
   snapTarget: 0
-  snappingSpeed: 50
+  snappingSpeed: 10
   thresholdSnappingSpeed: 50
   hardSnap: 0
   useUnscaledTime: 1
