@@ -154,7 +154,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void UpdateRowTiles() // once a mouse drag ends and a shift is made in the column grid, update the positions of the letters in the row grid underneath
     {
-        // yield return new WaitForSeconds(0.2f);
+        // yield return new WaitForSeconds(0.3f);
         
         Debug.Log("updating row tiles");
         
@@ -201,7 +201,7 @@ public class Scroller3x3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void UpdateColumnTiles() // once a mouse drag ends and a shift is made in the row grid, update the positions of the letters in the column grid underneath
     {
-        // yield return new WaitForSeconds(0.2f);
+        // yield return new WaitForSeconds(0.3f);
         
         Debug.Log("updating column tiles");
 

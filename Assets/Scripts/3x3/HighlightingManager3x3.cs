@@ -7,6 +7,7 @@ using TMPro;
 
 public class HighlightingManager3x3 : MonoBehaviour
 {
+    public int stageNumber;
     public GameObject Tile11, Tile12, Tile13, Tile21, Tile22, Tile23, Tile31, Tile32, Tile33;
     public string[] correctLetters;
     public GameObject[] letterTexts;
@@ -17,6 +18,12 @@ public class HighlightingManager3x3 : MonoBehaviour
     public Button backButton;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9;
     private bool[] allLetters;
+    private PuzzleGameHandler gameHandler;
+
+    void Awake()
+    {
+        gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
+    }
 
     void Start()
     {
@@ -70,34 +77,36 @@ public class HighlightingManager3x3 : MonoBehaviour
         TMP_Text rowTile8Text = null;
         TMP_Text rowTile9Text = null;
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.3f); // Tile11
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile11.transform.position.x, Tile11.transform.position.y), 0.05f); // Tile11
         FindTiles(results, out rowTile1Text, out colTile1Text, out rowTile1, out colTile1);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.3f); // Tile12
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile12.transform.position.x, Tile12.transform.position.y), 0.05f); // Tile12
         FindTiles(results, out rowTile2Text, out colTile2Text, out rowTile2, out colTile2);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.3f); // Tile13
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile13.transform.position.x, Tile13.transform.position.y), 0.05f); // Tile13
         FindTiles(results, out rowTile3Text, out colTile3Text, out rowTile3, out colTile3);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.3f); // Tile21
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile21.transform.position.x, Tile21.transform.position.y), 0.05f); // Tile21
         FindTiles(results, out rowTile4Text, out colTile4Text, out rowTile4, out colTile4);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.3f); // Tile22
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile22.transform.position.x, Tile22.transform.position.y), 0.05f); // Tile22
         FindTiles(results, out rowTile5Text, out colTile5Text, out rowTile5, out colTile5);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.3f); // lile23
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile23.transform.position.x, Tile23.transform.position.y), 0.05f); // lile23
         FindTiles(results, out rowTile6Text, out colTile6Text, out rowTile6, out colTile6);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.3f); // Tile31
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile31.transform.position.x, Tile31.transform.position.y), 0.05f); // Tile31
         FindTiles(results, out rowTile7Text, out colTile7Text, out rowTile7, out colTile7);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.3f); // Tile32
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile32.transform.position.x, Tile32.transform.position.y), 0.05f); // Tile32
         FindTiles(results, out rowTile8Text, out colTile8Text, out rowTile8, out colTile8);
 
-        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.3f); // Tile33
+        results = Physics2D.OverlapCircleAll(new Vector2(Tile33.transform.position.x, Tile33.transform.position.y), 0.05f); // Tile33
         FindTiles(results, out rowTile9Text, out colTile9Text, out rowTile9, out colTile9);
 
         Debug.Log(rowTile1Text.text + rowTile2Text.text + rowTile3Text.text + rowTile4Text.text + rowTile5Text.text + rowTile6Text.text + rowTile7Text.text + rowTile8Text.text + rowTile9Text.text);
+        Debug.Log(colTile1Text.text + colTile2Text.text + colTile3Text.text + colTile4Text.text + colTile5Text.text + colTile6Text.text + colTile7Text.text + colTile8Text.text + colTile9Text.text);
+
 
         // check for correct letter placements
         if (rowTile1Text.text == correctLetters[0] && colTile1Text.text == correctLetters[0] && (!rowTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight() && !colTile1.GetComponent<PuzzleTileScript>().GetBorderHighlight()))         
@@ -231,6 +240,7 @@ public class HighlightingManager3x3 : MonoBehaviour
         // check if all letters are in the right position
         if (CheckAllLetters(allTiles)) 
         {
+            gameHandler.stages.stages[stageNumber].state = 3;
             tileGrid.enabled = true;
             backButton.interactable = false;
             puzzleCompleteMenu.SetActive(true);
@@ -240,7 +250,7 @@ public class HighlightingManager3x3 : MonoBehaviour
             StartCoroutine(FadeInAndFadeOut(1.0f, solvedArcana, unsolvedArcana));
             yield return new WaitForSeconds(2.5f);
             StartCoroutine(FadeIn(1.0f, blackOut, 0.7f));
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.05f);
             while (puzzleCompletePopUp.alpha < 1.0f)
             {
                 puzzleCompletePopUp.alpha = puzzleCompletePopUp.alpha + (Time.deltaTime / 1.0f);

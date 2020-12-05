@@ -13,14 +13,17 @@ TagManager:
   - Fire
   - Earth
   - Readings
-  - Moon
-  - Sun
   - Wheel of Fortune
-  - Hanged Man
   - Justice
-  - Star
-  - World
-  - Devil
+  - Title
+  - Slider
+  - The Hanged Man
+  - The Devil
+  - The Star
+  - The World
+  - The Moon
+  - The Sun
+  - GameHandler
   layers:
   - Default
   - TransparentFX

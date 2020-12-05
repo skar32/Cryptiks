@@ -6,18 +6,24 @@ using TMPro;
 
 public class GridManager : MonoBehaviour
 {
-    public string[] letters;
     public GameObject[] columnTiles;
     public GameObject[] rowTiles;
+    public int stageNumber;
+    private PuzzleGameHandler gameHandler;
 
-    void Awake() // initialize both the column and row grids with the array of letters inputted in the inspector
+    void Awake()
+    {
+        gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
+    }
+
+    public void Start() // initialize both the column and row grids with the array of letters inputted in the inspector
     {
         int count = 0;
         foreach (GameObject tile in columnTiles) {
             GameObject tileCanvas = tile.transform.GetChild(0).gameObject;
             GameObject tileTextObject = tileCanvas.transform.GetChild(0).gameObject;
             TMP_Text tileText = tileTextObject.GetComponent<TMP_Text>();
-            tileText.text = letters[count];
+            tileText.text = gameHandler.stages.stages[stageNumber].savedPuzzleArrangement[count];
             count++;
         }
 
@@ -26,7 +32,7 @@ public class GridManager : MonoBehaviour
             GameObject tileCanvas = tile.transform.GetChild(0).gameObject;
             GameObject tileTextObject = tileCanvas.transform.GetChild(0).gameObject;
             TMP_Text tileText = tileTextObject.GetComponent<TMP_Text>();
-            tileText.text = letters[count];
+            tileText.text = gameHandler.stages.stages[stageNumber].savedPuzzleArrangement[count];
             count++;
         }
     }
