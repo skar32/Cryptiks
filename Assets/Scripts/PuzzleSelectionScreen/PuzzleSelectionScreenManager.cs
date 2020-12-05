@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DanielLochner.Assets.SimpleScrollSnap;
+using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -27,53 +28,57 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
 
     private string[] airArcana =
     {
-        "Justice", "Fortune"
-    };
-
-    private string[] fireArcana =
-    {
-        "Hanged_Man", "Devil"
+        "Justice", "Star"
     };
 
     private string[] waterArcana =
     {
-        "Star", "World"
+        "Chariot", "Hanged_Man"
     };
 
     private string[] earthArcana =
     {
-        "Moon", "Sun"
+        "Devil", "World"
+    };
+
+    private string[] fireArcana =
+    {
+        "Sun", "Fortune"
+    };
+
+    private string[] readingsArcana =
+    {
+        "Readings"
     };
 
     // Keep in mind that the length of the each list needs to be the same (fill in empty ones with "")
     private string[][] airStageList =
     {
-        new string[] { "Justice1", "Justice2", "Justice3", "Justice4", "" },
-        new string[] { "Wheel1", "Wheel2", "Wheel3", "Wheel4", "Wheel5" }
-    };
-
-    private string[][] fireStageList = 
-    {
-        new string[] { "Hanged1", "Hanged2", "Hanged3", "Hanged4", "" },
-        new string[] { "Devil1", "Devil2", "Devil3", "Devil4", "Devil5" }
+        new string[] { "The Search", "The Weapon", "The Task", "The Cause", "The Guide" },
+        new string[] { "Oppose Doubt", "Light", "Endure", "Revival", "Celestial Connection" }
     };
 
     private string[][] waterStageList =
     {
-        new string[] { "Star1", "Star2", "Star3", "Star4", "" },
-        new string[] { "World1", "World2", "World3", "World4", "World5" }
+        new string[] { "Ever Forward", "In Balance", "Step Up", "Blinders On", "Dual Sides" },
+        new string[] { "Patience", "Martyr", "Old Habits Die Hard", "A Different View", "Counterintuitive" }
     };
 
     private string[][] earthStageList =
     {
-        new string[] { "Moon1", "Moon2", "Moon3", "Moon4", "" },
-        new string[] { "Sun1", "Sun2", "Sun3", "Sun4", "Sun5" }
+        new string[] { "Lost", "Controlled", "Succumb", "Hollow", "You Hold the Key" },
+        new string[] { "Wrapping Up", "Ouroboros", "Appreciation", "Whole", "Nirvana" }
+    };
+
+    private string[][] fireStageList = 
+    {
+        new string[] { "Perpetual Light", "Positive", "Moment in the Sun", "Shine", "Comfortable Temperature" },
+        new string[] { "Harbinger", "Gamble", "Seeming Contradiction", "Karma", "(Mis)Fortune" }
     };
 
     private string[][] readingsStageList =
     {
-        new string[] { "Lorem1", "Lorem2", "Lorem3", "Lorem4", "" },
-        new string[] { "Ipsum1", "Ipsum2", "Ipsum3", "Ipsum4", "Ipsum5" }
+        new string[] { "Columns", "Rows", "Read", "Begin"},
     };
 
     void Awake()
@@ -82,18 +87,160 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         gameHandler.Save();
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        gameHandler.Load();
+
+        checkIcons();
+    }
+
     void Start()
     {
         Debug.Log(currElementNumber);
         Debug.Log(currArcanaNumber);
-        lastElementSelected = "Air";
-        lastArcanaSelected = "Justice";
-        currArcanaList = airArcanaList;
+
+        InitializeScreen(currElementNumber, currArcanaNumber);
 
         elementScroller.GoToPanel(currElementNumber);
         arcanaScroller.GoToPanel(currArcanaNumber);
         removeStages();
         generateStages(0, 0);
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void InitializeScreen(int elementNo, int arcanaNo)
+    {
+        switch (elementNo) {
+            case 0:
+                lastElementSelected = "Readings";
+                lastArcanaSelected = "Readings";
+                currArcanaList = readingsArcanaList;
+                break;
+            case 1:
+                lastElementSelected = "Air";
+                currArcanaList = airArcanaList;
+                lastArcanaSelected = airArcana[arcanaNo];
+                break;
+            case 2:
+                lastElementSelected = "Water";
+                currArcanaList = waterArcanaList;
+                lastArcanaSelected = waterArcana[arcanaNo];
+                break;
+            case 3:
+                lastElementSelected = "Earth";
+                currArcanaList = earthArcanaList;
+                lastArcanaSelected = earthArcana[arcanaNo];
+                break;
+            case 4:
+                lastElementSelected = "Fire";
+                currArcanaList = fireArcanaList;
+                lastArcanaSelected = fireArcana[arcanaNo];
+                break;
+            default:
+                Debug.Log("bruh what");
+                lastElementSelected = "Readings";
+                currArcanaList = readingsArcanaList;
+                lastArcanaSelected = "Readings";
+                break;
+        }
+    }
+
+    void checkIcons()
+    {
+        int numStages = gameHandler.stages.stages.Length;
+
+        string imagePath = "Art/Element_Icons/";
+        string arcanaPath = "Art/Arcana_Icons/";
+        string[] elements = new string[] { "Air", "Water", "Earth", "Fire" };
+        GameObject thisArcanaList = readingsArcanaList;
+        GameObject[] theseArcanaLists = new GameObject[] { airArcanaList, waterArcanaList, earthArcanaList, fireArcanaList };
+        string[][] thisArcanaNames = new string[][] { airArcana, waterArcana, earthArcana, fireArcana };
+
+        bool isComplete = true;
+        for (var i = 0; i < 4; i++)
+        {
+            if (gameHandler.stages.stages[i].state != 3) {
+                isComplete = false;
+                break;
+            }
+        }
+
+        string currPath = imagePath;
+        string currArcanaPath = arcanaPath;
+
+        if (isComplete) {
+            currPath += "ElementsOn/Reading_On_Circle";
+            currArcanaPath += "Readings/Card_ReadingComplete";
+        } else {
+            currPath += "ElementsOff/Reading_Off_Circle";
+            currArcanaPath += "Readings/Card_ReadingIncomplete";
+        }
+
+        elementsList.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(currPath);
+        thisArcanaList.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(currArcanaPath);
+
+        bool isComplete2 = true;
+        for (var j = 0; j < (long)Mathf.Floor(numStages/10); j++)
+        {
+            string[] currList = thisArcanaNames[j];
+            isComplete = true;
+            isComplete2 = true;
+            for (var i = 4; i < 9; i++)
+            {
+                if (gameHandler.stages.stages[i + j*10].state != 3) {
+                    isComplete = false;
+                    break;
+                }
+            }
+
+            currArcanaPath = arcanaPath;
+
+            if (currList[0] == "Chariot") currList[0] = "Moon";
+
+            if (isComplete) {
+                currArcanaPath += currList[0] + "/Card_" + currList[0] + "Complete";
+            } else {
+                currArcanaPath += currList[0] + "/Card_" + currList[0] + "Incomplete";
+            }
+
+            theseArcanaLists[j].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(currArcanaPath);
+
+            for (var i = 9; i < 14; i++)
+            {
+                if (gameHandler.stages.stages[i + j*10].state != 3) {
+                    isComplete2 = false;
+                    break;
+                }
+            }
+
+            currArcanaPath = arcanaPath;
+
+            if (isComplete2) {
+                currArcanaPath += currList[1] + "/Card_" + currList[1] + "Complete";
+            } else {
+                currArcanaPath += currList[1] + "/Card_" + currList[1] + "Incomplete";
+            }
+
+            theseArcanaLists[j].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(currArcanaPath);
+
+            currPath = imagePath;
+
+            if (isComplete && isComplete2) {
+                currPath += "ElementsOn/" + elements[j] + "_On_Circle";
+            } else {
+                currPath += "ElementsOff/" + elements[j] + "_Off_Circle";
+            }
+            elementsList.transform.GetChild(j+1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(currPath);
+        }
     }
 
     void Update()
@@ -159,7 +306,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Fire":
                 Debug.Log("Fire is selected!");
-                currElementNumber = 2;
+                currElementNumber = 4;
                 arcanaScroller = arcanaScrollers[1];
                 // Switch the Arcana lists to Fire
                 currArcanaList = fireArcanaList;
@@ -171,7 +318,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Water":
                 Debug.Log("Water is selected!");
-                currElementNumber = 3;
+                currElementNumber = 2;
                 arcanaScroller = arcanaScrollers[2];
                 // Switch the Arcana lists to Water
                 currArcanaList = waterArcanaList;
@@ -183,7 +330,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Earth":
                 Debug.Log("Earth is selected!");
-                currElementNumber = 4;
+                currElementNumber = 3;
                 arcanaScroller = arcanaScrollers[3];
                 // Switch the Arcana lists to Earth
                 currArcanaList = earthArcanaList;
@@ -206,34 +353,19 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         switch (currElementText) {
             case "Readings":
                 // do stuff if Readings element is selected
+                currArcanaNumber = 0;
+                generateStages(0, currArcanaNumber);
                 break;
             case "Air":
                 switch (newArcana) {
                     case "Justice":
                         Debug.Log("Justice is selected!");
                         currArcanaNumber = 0;
-                        generateStages(0, currArcanaNumber);
-                        break;
-                    case "Wheel of Fortune":
-                        currArcanaNumber = 1;
-                        Debug.Log("Wheel of Fortune is selected!");
-                        generateStages(0, currArcanaNumber);
-                        break;
-                    default:
-                        Debug.Log("You got " + newArcana + " in " + currElementText);
-                        break;
-                }
-                break;
-            case "Fire":
-                 switch (newArcana) {
-                    case "Hanged Man":
-                        Debug.Log("Hanged Man is selected!");
-                        currArcanaNumber = 0;
                         generateStages(1, currArcanaNumber);
                         break;
-                    case "Devil":
-                        Debug.Log("Devil is selected!");
+                    case "The Star":
                         currArcanaNumber = 1;
+                        Debug.Log("Star is selected!");
                         generateStages(1, currArcanaNumber);
                         break;
                     default:
@@ -243,13 +375,13 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Water":
                  switch (newArcana) {
-                    case "Star":
-                        Debug.Log("Star is selected!");
+                    case "The Chariot":
+                        Debug.Log("Chariot is selected!");
                         currArcanaNumber = 0;
                         generateStages(2, currArcanaNumber);
                         break;
-                    case "World":
-                        Debug.Log("World is selected!");
+                    case "The Hanged Man":
+                        Debug.Log("Hanged Man is selected!");
                         currArcanaNumber = 1;
                         generateStages(2, currArcanaNumber);
                         break;
@@ -260,15 +392,32 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Earth":
                 switch (newArcana) {
-                    case "Moon":
-                        Debug.Log("Moon is selected!");
+                    case "The Devil":
+                        Debug.Log("Devil is selected!");
                         currArcanaNumber = 0;
                         generateStages(3, currArcanaNumber);
                         break;
-                    case "Sun":
-                        Debug.Log("Sun is selected!");
+                    case "The World":
+                        Debug.Log("World is selected!");
                         currArcanaNumber = 1;
                         generateStages(3, currArcanaNumber);
+                        break;
+                    default:
+                        Debug.Log("You got " + newArcana + " in " + currElementText);
+                        break;
+                }
+                break;
+            case "Fire":
+                 switch (newArcana) {
+                    case "The Sun":
+                        Debug.Log("Sun is selected!");
+                        currArcanaNumber = 0;
+                        generateStages(4, currArcanaNumber);
+                        break;
+                    case "Wheel of Fortune":
+                        Debug.Log("Wheel of Fortune is selected!");
+                        currArcanaNumber = 1;
+                        generateStages(4, currArcanaNumber);
                         break;
                     default:
                         Debug.Log("You got " + newArcana + " in " + currElementText);
@@ -290,27 +439,42 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     void generateStages(int elementNo, int arcanaNo) {
         string[] stageList;
         string currentCard;
+        int currentStageNumber;
         switch (elementNo) {
             case 0:
-                stageList = airStageList[arcanaNo];
-                currentCard = airArcana[arcanaNo];
+                stageList = readingsStageList[arcanaNo];
+                currentCard = readingsArcana[arcanaNo];
+                currentStageNumber = 0;
+                // TODO: delete once Readings art added
+                if (currentCard == "Readings") currentCard = "Moon";
                 break;
             case 1:
-                stageList = fireStageList[arcanaNo];
-                currentCard = fireArcana[arcanaNo];
+                stageList = airStageList[arcanaNo];
+                currentCard = airArcana[arcanaNo];
+                currentStageNumber = 4 + 5*arcanaNo;
                 break;
             case 2:
                 stageList = waterStageList[arcanaNo];
                 currentCard = waterArcana[arcanaNo];
+                // TODO: delete once Chariot art added
+                if (currentCard == "Chariot") currentCard = "Moon";
+                currentStageNumber = 14 + 5*arcanaNo;
                 break;
             case 3:
                 stageList = earthStageList[arcanaNo];
                 currentCard = earthArcana[arcanaNo];
+                currentStageNumber = 24 + 5*arcanaNo;
+                break;
+            case 4:
+                stageList = fireStageList[arcanaNo];
+                currentCard = fireArcana[arcanaNo];
+                currentStageNumber = 34 + 5*arcanaNo;
                 break;
             default:
-                Debug.Log("Probably in Readings");
+                Debug.Log("da huh");
                 stageList = new string[] {""};
                 currentCard = "";
+                currentStageNumber = 0;
                 break;
         }
         int numStages = 0;
@@ -318,6 +482,8 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             if (stage.Length == 0) {
                 break;
             }
+            int thisStageNumber = currentStageNumber + numStages;
+
             numStages++;
 
             GameObject newStage = Instantiate(stagePrefab, stageLocations.transform);
@@ -325,12 +491,27 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             TMP_Text stageTextComponent = getTextComponent(newStage);
 
             Image stageImage = getImageComponent(newStage);
+
+            int currIntState = gameHandler.stages.stages[thisStageNumber].state;
             string imagePath = "Art/Arcana_Icons/" + currentCard + "/" + currentCard + "_";
 
-            // TODO: Need to check what state the stage card is in
-            // Assume completion for now
-            string currState = "Complete";
-            imagePath = imagePath + currState;
+            switch (currIntState) {
+                case 0:
+                    imagePath += "Locked";
+                    break;
+                case 1:
+                    imagePath += "NoProgress";
+                    break;
+                case 2:
+                    imagePath += "Progress";
+                    break;
+                case 3:
+                    imagePath += "Complete";
+                    break;
+                default:
+                    Debug.Log("Where you state at");
+                    break;
+            }
 
             stageImage.sprite = Resources.Load<Sprite>(imagePath);
 
