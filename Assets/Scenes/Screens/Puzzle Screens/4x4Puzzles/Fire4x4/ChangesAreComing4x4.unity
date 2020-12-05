@@ -3600,6 +3600,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246617087}
   m_CullTransparentMesh: 0
+--- !u!1001 &246761349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481760, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558239057250481761, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
+      propertyPath: m_Name
+      value: GameHandler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f00a7aacd83690499cd052fd0fb8a80, type: 3}
 --- !u!1 &251980553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4657,6 +4714,7 @@ GameObject:
   - component: {fileID: 304319346}
   - component: {fileID: 304319345}
   - component: {fileID: 304319344}
+  - component: {fileID: 304319347}
   m_Layer: 0
   m_Name: GridManager
   m_TagString: Untagged
@@ -4676,6 +4734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cb18fc6a7db864188e1714d0c7741c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageNumber: 39
   Tile11: {fileID: 18242405}
   Tile12: {fileID: 251980553}
   Tile13: {fileID: 479379618}
@@ -4750,23 +4809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c236b66c7a620d241aca88b3a1052464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letters:
-  - E
-  - O
-  - C
-  - A
-  - N
-  - C
-  - I
-  - S
-  - H
-  - R
-  - G
-  - M
-  - G
-  - A
-  - E
-  - N
   columnTiles:
   - {fileID: 431478642}
   - {fileID: 897039885}
@@ -4801,6 +4843,7 @@ MonoBehaviour:
   - {fileID: 1486964451}
   - {fileID: 1954715429}
   - {fileID: 1515209283}
+  stageNumber: 39
 --- !u!4 &304319346
 Transform:
   m_ObjectHideFlags: 0
@@ -4815,6 +4858,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304319347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304319343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a622649afc91d0e4d86034dc38e27783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageNumber: 39
+  Tile11: {fileID: 18242405}
+  Tile12: {fileID: 251980553}
+  Tile13: {fileID: 479379618}
+  Tile14: {fileID: 541378412}
+  Tile21: {fileID: 63930829}
+  Tile22: {fileID: 497134116}
+  Tile23: {fileID: 2021150799}
+  Tile24: {fileID: 1415002735}
+  Tile31: {fileID: 1296515034}
+  Tile32: {fileID: 361696380}
+  Tile33: {fileID: 466054858}
+  Tile34: {fileID: 916313020}
+  Tile41: {fileID: 1424040334}
+  Tile42: {fileID: 1901795535}
+  Tile43: {fileID: 802618122}
+  Tile44: {fileID: 483099561}
+  hangmanLetters:
+  - {fileID: 216175664}
+  - {fileID: 1141976669}
+  - {fileID: 1837912677}
+  - {fileID: 1239153711}
+  - {fileID: 452565900}
+  - {fileID: 1233439871}
+  - {fileID: 1070223814}
+  - {fileID: 1565390952}
+  - {fileID: 1731904247}
+  - {fileID: 38431216}
+  - {fileID: 190361726}
+  - {fileID: 1045036071}
+  - {fileID: 278994652}
+  - {fileID: 400736839}
+  - {fileID: 754692170}
+  - {fileID: 1919182683}
 --- !u!1 &322127795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8848,14 +8937,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 601806543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2759923124ad5f41b9715d2e736bac7, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d651c2461590c49a05bd02c9a062ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSlider: {fileID: 601806545}
-  nextPuzzleSlider: {fileID: 1896376761}
+  targetSlider: {fileID: 601806545}
+  otherSlider: {fileID: 1896376761}
   nextLevel: PuzzleSelectionScreen
   transition: {fileID: 1219645798}
   transitionTime: 1
+  stageData4x4: {fileID: 304319347}
 --- !u!1 &605425469
 GameObject:
   m_ObjectHideFlags: 0
@@ -11653,14 +11743,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 841337122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2759923124ad5f41b9715d2e736bac7, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d651c2461590c49a05bd02c9a062ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSlider: {fileID: 841337124}
-  nextPuzzleSlider: {fileID: 1991171836}
+  targetSlider: {fileID: 841337124}
+  otherSlider: {fileID: 1991171836}
   nextLevel: PuzzleSelectionScreen
   transition: {fileID: 1219645798}
   transitionTime: 1
+  stageData4x4: {fileID: 304319347}
 --- !u!1 &843375660
 GameObject:
   m_ObjectHideFlags: 0
@@ -25544,6 +25635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896376760}
   - component: {fileID: 1896376761}
+  - component: {fileID: 1896376762}
   m_Layer: 5
   m_Name: GoToNextLevelSlider
   m_TagString: Untagged
@@ -25621,6 +25713,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1896376762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896376759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d651c2461590c49a05bd02c9a062ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSlider: {fileID: 1896376761}
+  otherSlider: {fileID: 601806545}
+  nextLevel: 
+  transition: {fileID: 1219645798}
+  transitionTime: 1
+  stageData4x4: {fileID: 304319347}
 --- !u!1 &1901795535
 GameObject:
   m_ObjectHideFlags: 0
@@ -28347,7 +28457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093157252
 GameObject:

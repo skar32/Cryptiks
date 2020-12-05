@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Screens/PuzzleSelectionScreen.unity
     guid: 6992aad3574489245b080a6688e3f3b1
+  - enabled: 1
+    path: Assets/Scenes/Screens/Puzzle Screens/3x3Puzzles/Air3x3/SeekTruth3x3.unity
+    guid: cbbbfe6535d716748a550c32ff5f57c7
+  - enabled: 1
+    path: Assets/Scenes/Screens/Puzzle Screens/3x3Puzzles/Air3x3/HaveFaith3x3.unity
+    guid: 148c7f69d96256d41bb2dbf58256354b
+  - enabled: 1
+    path: Assets/Scenes/Screens/Puzzle Screens/4x4Puzzles/Air4x4/BalanceTheScales4x4.unity
+    guid: 5cb0360c65fa1c841ab83061c34790a2
+  - enabled: 1
+    path: Assets/Scenes/Screens/Puzzle Screens/5x5Puzzles/Earth5x5/Hollow5x5.unity
+    guid: 634db66fbf7766047bef2670926133d2
   m_configObjects: {}

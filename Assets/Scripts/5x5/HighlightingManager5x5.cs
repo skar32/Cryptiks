@@ -7,6 +7,7 @@ using TMPro;
 
 public class HighlightingManager5x5 : MonoBehaviour
 {
+    public int stageNumber;
     public GameObject Tile11, Tile12, Tile13, Tile14, Tile15, Tile21, Tile22, Tile23, Tile24, Tile25, Tile31, Tile32, Tile33, Tile34, Tile35, Tile41, Tile42, Tile43, Tile44, Tile45, Tile51, Tile52, Tile53, Tile54, Tile55;
     public string[] correctLetters;
     public GameObject[] letterTexts;
@@ -17,6 +18,12 @@ public class HighlightingManager5x5 : MonoBehaviour
     public Button backButton;
     private bool letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16, letter17, letter18, letter19, letter20, letter21, letter22, letter23, letter24, letter25;
     private bool[] allLetters;
+    private PuzzleGameHandler gameHandler;
+
+    void Awake()
+    {
+        gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
+    }
 
     void Start()
     {
@@ -567,6 +574,7 @@ public class HighlightingManager5x5 : MonoBehaviour
         // check if all letters are in the right position
         if (CheckAllLetters(allTiles)) 
         {
+            gameHandler.stages.stages[stageNumber].state = 3;
             tileGrid.enabled = true;
             backButton.interactable = false;
             puzzleCompleteMenu.SetActive(true);

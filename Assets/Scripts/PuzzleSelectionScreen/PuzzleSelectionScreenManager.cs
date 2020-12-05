@@ -23,6 +23,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     private GameObject currArcana;
     private string currElementSelected, currArcanaSelected;
     private string lastElementSelected, lastArcanaSelected;
+    private PuzzleGameHandler gameHandler;
 
     private string[] airArcana =
     {
@@ -75,8 +76,16 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         new string[] { "Ipsum1", "Ipsum2", "Ipsum3", "Ipsum4", "Ipsum5" }
     };
 
+    void Awake()
+    {
+        gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
+        gameHandler.Save();
+    }
+
     void Start()
     {
+        Debug.Log(currElementNumber);
+        Debug.Log(currArcanaNumber);
         lastElementSelected = "Air";
         lastArcanaSelected = "Justice";
         currArcanaList = airArcanaList;
@@ -124,9 +133,21 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     void changeElement(string newElement) {
         lastElementSelected = newElement;
         switch (newElement) {
+            case "Readings":
+                Debug.Log("Readings is selected!");
+                currElementNumber = 0;
+                arcanaScroller = arcanaScrollers[4];
+                // Switch the Arcana lists to Readings
+                currArcanaList = readingsArcanaList;
+                airArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                fireArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                earthArcanaList.transform.parent.parent.gameObject.SetActive(false);
+                readingsArcanaList.transform.parent.parent.gameObject.SetActive(true);
+                break;
             case "Air":
                 Debug.Log("Air is selected!");
-                currElementNumber = 0;
+                currElementNumber = 1;
                 arcanaScroller = arcanaScrollers[0];
                 // Switch the Arcana lists to Air
                 currArcanaList = airArcanaList;
@@ -138,7 +159,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Fire":
                 Debug.Log("Fire is selected!");
-                currElementNumber = 1;
+                currElementNumber = 2;
                 arcanaScroller = arcanaScrollers[1];
                 // Switch the Arcana lists to Fire
                 currArcanaList = fireArcanaList;
@@ -150,7 +171,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Water":
                 Debug.Log("Water is selected!");
-                currElementNumber = 2;
+                currElementNumber = 3;
                 arcanaScroller = arcanaScrollers[2];
                 // Switch the Arcana lists to Water
                 currArcanaList = waterArcanaList;
@@ -162,7 +183,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 break;
             case "Earth":
                 Debug.Log("Earth is selected!");
-                currElementNumber = 3;
+                currElementNumber = 4;
                 arcanaScroller = arcanaScrollers[3];
                 // Switch the Arcana lists to Earth
                 currArcanaList = earthArcanaList;
@@ -171,18 +192,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
                 earthArcanaList.transform.parent.parent.gameObject.SetActive(true);
                 readingsArcanaList.transform.parent.parent.gameObject.SetActive(false);
-                break;
-            case "Readings":
-                Debug.Log("Readings is selected!");
-                currElementNumber = 4;
-                arcanaScroller = arcanaScrollers[4];
-                // Switch the Arcana lists to Readings
-                currArcanaList = readingsArcanaList;
-                airArcanaList.transform.parent.parent.gameObject.SetActive(false);
-                fireArcanaList.transform.parent.parent.gameObject.SetActive(false);
-                waterArcanaList.transform.parent.parent.gameObject.SetActive(false);
-                earthArcanaList.transform.parent.parent.gameObject.SetActive(false);
-                readingsArcanaList.transform.parent.parent.gameObject.SetActive(true);
                 break;
             default:
                 Debug.Log("Bro what");
@@ -195,6 +204,9 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         removeStages();
 
         switch (currElementText) {
+            case "Readings":
+                // do stuff if Readings element is selected
+                break;
             case "Air":
                 switch (newArcana) {
                     case "Justice":
@@ -262,9 +274,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                         Debug.Log("You got " + newArcana + " in " + currElementText);
                         break;
                 }
-                break;
-            case "Readings":
-                // do stuff if Readings element is selected
                 break;
             default:
                 Debug.Log("bruh what");

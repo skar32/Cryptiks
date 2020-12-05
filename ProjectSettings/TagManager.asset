@@ -23,6 +23,7 @@ TagManager:
   - The World
   - The Moon
   - The Sun
+  - GameHandler
   layers:
   - Default
   - TransparentFX

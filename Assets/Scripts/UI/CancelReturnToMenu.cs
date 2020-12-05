@@ -2,28 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class CancelReturnToMenu : MonoBehaviour
+public class CancelReturnToMenu : MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 {
     private Slider cancelSlider;
     public CanvasGroup confirmationPopUp;
     public GraphicRaycaster tileGrid;
     public Image blackout;
     public Button backButton;
-    private bool changing = false;
+    private bool pointerDown;
 
     void Awake()
     {
         cancelSlider = GetComponent<Slider>();
+        pointerDown = false;
     }
 
     void Update()
     {
-        if (cancelSlider.value == 1.0f && !changing) {
-            changing = true;
+        if (!pointerDown) {
+            if (cancelSlider.value > 0) cancelSlider.value -= 1 * Time.deltaTime;
+        }
+    }
+
+    public void OnPointerDown(PointerEventData ev) {
+        pointerDown = true;
+        Debug.Log("Dragging");
+    }
+
+    public void OnPointerUp(PointerEventData ev) {
+        float currValue = cancelSlider.value;
+        if (currValue > .9) {
             confirmationPopUp.interactable = false;
             confirmationPopUp.blocksRaycasts = false;
             StartCoroutine(FadeOut(1f, blackout));
+        } else {
+            pointerDown = false;
+            Debug.Log("Pointer Up!");
         }
     }
 
@@ -37,7 +53,6 @@ public class CancelReturnToMenu : MonoBehaviour
             yield return null;
         }
         cancelSlider.value = 0.0f;
-        changing = false;
         backButton.interactable = true;
         tileGrid.enabled = false;
     }
