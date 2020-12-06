@@ -24,6 +24,7 @@ TagManager:
   - The Moon
   - The Sun
   - GameHandler
+  - The Chariot
   layers:
   - Default
   - TransparentFX
