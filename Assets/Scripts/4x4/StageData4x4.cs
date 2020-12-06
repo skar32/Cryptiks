@@ -11,7 +11,7 @@ public class StageData4x4 : MonoBehaviour
     public GameObject[] hangmanLetters;
     private GridManager gridManagerScript;
 
-    void Awake()
+    void Start()
     {
         gridManagerScript = GetComponent<GridManager>();
         gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
@@ -29,7 +29,7 @@ public class StageData4x4 : MonoBehaviour
         } else if (gameHandler.stages.stages[stageNumber].state == 3) // if stage is being opened after being completed before
         { 
             gameHandler.stages.stages[stageNumber].state = 1;
-            Awake();
+            Start();
         }
     }
 
