@@ -7,8 +7,8 @@
       "state": 1,
       "originalPuzzleArrangement": ["T", "U", "S", "E", "J", "I", "K", "S", "L", "H", "I", "T"],
       "savedPuzzleArrangement": ["T", "U", "S", "E", "J", "I", "K", "S", "L", "H", "I", "T"],
-      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "stageNumber": 1,
@@ -16,8 +16,8 @@
       "state": 1,
       "originalPuzzleArrangement": ["T", "J", "U", "S", "L", "I", "K", "E", "H", "A", "T", "T"],
       "savedPuzzleArrangement": ["T", "J", "U", "S", "L", "I", "K", "E", "H", "A", "T", "T"],
-      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "stageNumber": 2,
@@ -25,8 +25,8 @@
       "state": 1,
       "originalPuzzleArrangement": ["W", "O", "R", "D", "D", "M", "I", "G", "H", "S", "W", "R", "A", "P", "T", "A", "R", "O", "U", "N"],
       "savedPuzzleArrangement": ["W", "O", "R", "D", "D", "M", "I", "G", "H", "S", "W", "R", "A", "P", "T", "A", "R", "O", "U", "N"],
-      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "stageNumber": 3,
@@ -34,8 +34,8 @@
       "state": 1,
       "originalPuzzleArrangement": ["A", "R", "S", "U", "T", "Y", "O", "R", "J", "O", "U", "Y", "R", "N", "E", "T"],
       "savedPuzzleArrangement": ["A", "R", "S", "U", "T", "Y", "O", "R", "J", "O", "U", "Y", "R", "N", "E", "T"],
-      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
 
     {
@@ -294,8 +294,8 @@
 	  "stageNumber": 32,
 	  "numTiles": 12,
 	  "state": 1,
-      "originalPuzzleArrangement": ["E", "F", "P", "T", "E", "M", "O", "C", "E", "E", "L", "L"],
-	  "savedPuzzleArrangement": ["E", "F", "P", "T", "E", "M", "O", "C", "E", "E", "L", "L"],
+      "originalPuzzleArrangement": ["E", "M", "P", "T", "E", "E", "O", "C", "E", "F", "L", "L"],
+	  "savedPuzzleArrangement": ["E", "M", "P", "T", "E", "E", "O", "C", "E", "F", "L", "L"],
       "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	  "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
@@ -375,8 +375,8 @@
 	  "stageNumber": 41,
 	  "numTiles": 20,
 	  "state": 1,
-      "originalPuzzleArrangement": ["L", "A", "E", "T", "I", "O", "H", "G", "C", "C", "N", "N", "S", "T", "N", "N", "Y", "O", "A", "S"],
-	  "savedPuzzleArrangement": ["L", "A", "E", "T", "I", "O", "H", "G", "C", "C", "N", "N", "S", "T", "N", "N", "Y", "O", "A", "S"],
+      "originalPuzzleArrangement": ["L", "A", "H", "T", "I", "O", "N", "G", "C", "C", "N", "N", "S", "T", "A", "N", "Y", "O", "E", "S"],
+	  "savedPuzzleArrangement": ["L", "A", "H", "T", "I", "O", "N", "G", "C", "C", "N", "N", "S", "T", "A", "N", "Y", "O", "E", "S"],
       "originalHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	  "savedHangmanLetterVisibilities": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
