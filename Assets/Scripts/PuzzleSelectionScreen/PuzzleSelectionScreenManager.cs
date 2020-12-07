@@ -18,7 +18,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     public GameObject stagePrefab;
     public SimpleScrollSnap elementScroller, arcanaScroller;
     public SimpleScrollSnap[] arcanaScrollers;
-    public static int currElementNumber = 0, currArcanaNumber = 0;
+    public static int currElementNumber = 0, currArcanaNumber = 0, currArcanaScroller = 4;
     private GameObject currArcanaList;
     private GameObject currElement;
     private GameObject currArcana;
@@ -95,21 +95,75 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         gameHandler.Load();
+        arcanaScroller = arcanaScrollers[currArcanaScroller];
+        InitializeScreen(currElementNumber, currArcanaNumber);
 
+        switch (currElementNumber) {
+        case 0:
+            currElementSelected = "Readings";
+            break;
+        case 1:
+            currElementSelected = "Air";
+            break;
+        case 2:
+            currElementSelected = "Water";
+            break;
+        case 3:
+            currElementSelected = "Earth";
+            break;
+        case 4:
+            currElementSelected = "Fire";
+            break;
+        default:
+            break;
+        }
+        changeElement(currElementSelected);
+
+        elementScroller.GoToPanel(currElementNumber);
+        arcanaScrollers[currArcanaScroller].GoToPanel(currArcanaNumber);
+        removeStages();
+        generateStages(currElementNumber, currArcanaNumber);
         checkIcons();
     }
 
     void Start()
     {
-        Debug.Log(currElementNumber);
-        Debug.Log(currArcanaNumber);
+        Debug.Log("currElementNumber: " + currElementNumber);
+        Debug.Log("currArcanaNumber: " + currArcanaNumber);
+        Debug.Log("currArcanaScrollerNumber: " + currArcanaScroller);
 
+        arcanaScroller = arcanaScrollers[currArcanaScroller];
         InitializeScreen(currElementNumber, currArcanaNumber);
 
+        switch (currElementNumber) {
+            case 0:
+                currElementSelected = "Readings";
+                break;
+            case 1:
+                currElementSelected = "Air";
+                break;
+            case 2:
+                currElementSelected = "Water";
+                break;
+            case 3:
+                currElementSelected = "Earth";
+                break;
+            case 4:
+                currElementSelected = "Fire";
+                break;
+            default:
+                break;
+        }
+        changeElement(currElementSelected);
+
+        Debug.Log("currArcanaScrollerSelected: " + arcanaScroller.name);
+
         elementScroller.GoToPanel(currElementNumber);
-        arcanaScroller.GoToPanel(currArcanaNumber);
+        arcanaScrollers[currArcanaScroller].GoToPanel(currArcanaNumber);
         removeStages();
-        generateStages(0, 0);
+        generateStages(currElementNumber, currArcanaNumber);
+        checkIcons();
+        // generateStages(0, 0);
     }
 
     void OnDisable()
@@ -204,8 +258,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
 
             currArcanaPath = arcanaPath;
 
-            if (currList[0] == "Chariot") currList[0] = "Moon";
-
             if (isComplete) {
                 currArcanaPath += currList[0] + "/Card_" + currList[0] + "Complete";
             } else {
@@ -284,6 +336,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 Debug.Log("Readings is selected!");
                 currElementNumber = 0;
                 arcanaScroller = arcanaScrollers[4];
+                currArcanaScroller = 4;
                 // Switch the Arcana lists to Readings
                 currArcanaList = readingsArcanaList;
                 airArcanaList.transform.parent.parent.gameObject.SetActive(false);
@@ -296,6 +349,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 Debug.Log("Air is selected!");
                 currElementNumber = 1;
                 arcanaScroller = arcanaScrollers[0];
+                currArcanaScroller = 0;
                 // Switch the Arcana lists to Air
                 currArcanaList = airArcanaList;
                 airArcanaList.transform.parent.parent.gameObject.SetActive(true);
@@ -308,6 +362,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 Debug.Log("Fire is selected!");
                 currElementNumber = 4;
                 arcanaScroller = arcanaScrollers[1];
+                currArcanaScroller = 1;
                 // Switch the Arcana lists to Fire
                 currArcanaList = fireArcanaList;
                 airArcanaList.transform.parent.parent.gameObject.SetActive(false);
@@ -320,6 +375,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 Debug.Log("Water is selected!");
                 currElementNumber = 2;
                 arcanaScroller = arcanaScrollers[2];
+                currArcanaScroller = 2;
                 // Switch the Arcana lists to Water
                 currArcanaList = waterArcanaList;
                 airArcanaList.transform.parent.parent.gameObject.SetActive(false);
@@ -332,6 +388,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 Debug.Log("Earth is selected!");
                 currElementNumber = 3;
                 arcanaScroller = arcanaScrollers[3];
+                currArcanaScroller = 3;
                 // Switch the Arcana lists to Earth
                 currArcanaList = earthArcanaList;
                 airArcanaList.transform.parent.parent.gameObject.SetActive(false);
@@ -353,6 +410,7 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
         switch (currElementText) {
             case "Readings":
                 // do stuff if Readings element is selected
+                Debug.Log("Readings is selected!");
                 currArcanaNumber = 0;
                 generateStages(0, currArcanaNumber);
                 break;
@@ -445,8 +503,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
                 stageList = readingsStageList[arcanaNo];
                 currentCard = readingsArcana[arcanaNo];
                 currentStageNumber = 0;
-                // TODO: delete once Readings art added
-                if (currentCard == "Readings") currentCard = "Moon";
                 break;
             case 1:
                 stageList = airStageList[arcanaNo];
@@ -456,8 +512,6 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             case 2:
                 stageList = waterStageList[arcanaNo];
                 currentCard = waterArcana[arcanaNo];
-                // TODO: delete once Chariot art added
-                if (currentCard == "Chariot") currentCard = "Moon";
                 currentStageNumber = 14 + 5*arcanaNo;
                 break;
             case 3:
@@ -487,6 +541,11 @@ public class PuzzleSelectionScreenManager : MonoBehaviour
             numStages++;
 
             GameObject newStage = Instantiate(stagePrefab, stageLocations.transform);
+
+            newStage.GetComponent<StageNumber>().SetStageNumber(thisStageNumber);
+            newStage.transform.GetChild(1).GetChild(0).GetComponent<SliderHandler>().SetStageNum(thisStageNumber);
+
+            // Debug.Log("Stage number: " + newStage.GetComponent<StageNumber>().GetStageNumber());
 
             TMP_Text stageTextComponent = getTextComponent(newStage);
 

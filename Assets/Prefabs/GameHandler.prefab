@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab262fd9fb0bcef46b7661920c843b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stagesList:
+  stages:
     stages: []
   originalJSONFile: {fileID: 4900000, guid: 742ffc10c5d709d4a993e4bb6b000213, type: 3}
-  recentSaveJSON: {fileID: 4900000, guid: 392d93203e48c0b41a30b300f7d3fca9, type: 3}
+  recentSaveJSON: {fileID: 0}

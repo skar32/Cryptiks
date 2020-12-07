@@ -14,9 +14,10 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
+        PuzzleGameHandler.currStageSelected = stageNumber + 2;
     }
 
-    public void Start() // initialize both the column and row grids with the array of letters inputted in the inspector
+    public void Init() // initialize both the column and row grids with the array of letters inputted in the inspector
     {
         int count = 0;
         foreach (GameObject tile in columnTiles) {
