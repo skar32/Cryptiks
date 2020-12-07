@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6863,7 +6863,7 @@ Canvas:
   m_GameObject: {fileID: 610952289}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 1257335160}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -6883,8 +6883,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610952289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.005208333, y: 0.005208333, z: 0.005208333}
   m_Children:
   - {fileID: 520615369}
   - {fileID: 1087658553}
@@ -6905,9 +6905,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 886.3357, y: 1920.0001}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &627732198
 GameObject:
   m_ObjectHideFlags: 0
@@ -15705,8 +15705,8 @@ Camera:
   m_GameObject: {fileID: 1257335158}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -22897,7 +22897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSlider: {fileID: 1896376761}
   otherSlider: {fileID: 601806545}
-  nextLevel: 
+  nextLevel: Nirvana6x5
   transition: {fileID: 1219645798}
   transitionTime: 1
   stageData3x4: {fileID: 1580150550}

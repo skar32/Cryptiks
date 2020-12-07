@@ -20,17 +20,23 @@ using CodeMonkey.Utils;
 public class PuzzleGameHandler : MonoBehaviour 
 {
     public Stages stages;
-    public TextAsset originalJSONFile;
-    public TextAsset recentSaveJSON;
+    public static int currStageSelected = 0;
     private static bool initialSetup = false;
 
     private void Awake() 
     {
         if (!initialSetup) {
+            StreamReader saveReader = new StreamReader(Application.streamingAssetsPath + "/Saves/recentSave.json");
+            string saveData = saveReader.ReadToEnd(); 
+            saveReader.Close();
+            StreamReader originalReader = new StreamReader(Application.streamingAssetsPath + "/Saves/Stages.json");
+            string originalData = originalReader.ReadToEnd(); 
+            originalReader.Close();
+
             SavingSystem.Init();
             Load();
-            stages = JsonUtility.FromJson<Stages>(originalJSONFile.text); // use when saving mechanic is NOT needed to test
-            // stages = JsonUtility.FromJson<Stages>(recentSaveJSON.text); // use when saving mechanic is needed to test
+            // stages = JsonUtility.FromJson<Stages>(originalData); // use when saving mechanic is NOT needed to test
+            stages = JsonUtility.FromJson<Stages>(saveData); // use when saving mechanic is needed to test
             initialSetup = true;
         }
     }
@@ -49,10 +55,13 @@ public class PuzzleGameHandler : MonoBehaviour
         // Save
         int currElementSelected = PuzzleSelectionScreenManager.currElementNumber;
         int currArcanaSelected = PuzzleSelectionScreenManager.currArcanaNumber;
+        int currArcanaScrollerSelected = PuzzleSelectionScreenManager.currArcanaScroller;
 
         SaveObject saveObject = new SaveObject { 
             currElementSelected = currElementSelected,
             currArcanaSelected = currArcanaSelected,
+            currStage = currStageSelected,
+            currArcanaScroller = currArcanaScrollerSelected,
             stages = stages.stages
         };
         string json = JsonUtility.ToJson(saveObject);
@@ -71,6 +80,8 @@ public class PuzzleGameHandler : MonoBehaviour
 
             PuzzleSelectionScreenManager.currElementNumber = saveObject.currElementSelected;
             PuzzleSelectionScreenManager.currArcanaNumber = saveObject.currArcanaSelected;
+            PuzzleSelectionScreenManager.currArcanaScroller = saveObject.currArcanaScroller;
+            currStageSelected = saveObject.currStage;
             stages.stages = saveObject.stages;
 
         } else {
@@ -85,7 +96,7 @@ public class PuzzleGameHandler : MonoBehaviour
 
 
     private class SaveObject {
-        public int currElementSelected, currArcanaSelected;
+        public int currElementSelected, currArcanaSelected, currStage, currArcanaScroller;
         public StageInfo[] stages;
     }
 }

@@ -11,7 +11,7 @@ public class StageData3x4 : MonoBehaviour
     public GameObject[] hangmanLetters;
     private GridManager gridManagerScript;
 
-    void Awake()
+    void Start()
     {
         gridManagerScript = GetComponent<GridManager>();
         gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
@@ -25,12 +25,14 @@ public class StageData3x4 : MonoBehaviour
         { 
             UpdateTiles(gameHandler.stages.stages[stageNumber].currentPuzzleArrangement, gameHandler.stages.stages[stageNumber].savedPuzzleArrangement);
             UpdateHangmanLetters(hangmanLetters, gameHandler.stages.stages[stageNumber].savedHangmanLetterVisibilities);
-            gridManagerScript.Start();
         } else if (gameHandler.stages.stages[stageNumber].state == 3) // if stage is being opened after being completed before
         { 
-            gameHandler.stages.stages[stageNumber].state = 1;
-            Awake();
+            gameHandler.stages.stages[stageNumber].state = 2;
+            gameHandler.stages.stages[stageNumber].currentPuzzleArrangement = new string[gameHandler.stages.stages[stageNumber].numTiles];
+            UpdateTiles(gameHandler.stages.stages[stageNumber].savedPuzzleArrangement, gameHandler.stages.stages[stageNumber].originalPuzzleArrangement);
+            UpdateHangmanLetters(hangmanLetters, gameHandler.stages.stages[stageNumber].originalHangmanLetterVisibilities);
         }
+        gridManagerScript.Init();
     }
 
     public void SaveData()

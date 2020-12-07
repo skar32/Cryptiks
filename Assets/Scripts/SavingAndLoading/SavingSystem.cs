@@ -17,7 +17,7 @@ using UnityEngine;
 
 public static class SavingSystem {
 
-    private static readonly string SAVE_FOLDER = Application.dataPath + "/Saves/";
+    private static readonly string SAVE_FOLDER = Application.streamingAssetsPath + "/Saves/";
     private const string SAVE_EXTENSION = "json";
 
     public static void Init() {
