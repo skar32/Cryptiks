@@ -237,6 +237,11 @@ public class StageData5x5 : MonoBehaviour
         }
     }
 
+    // void OnApplicationQuit()
+    // {
+    //     SaveData();
+    // }
+
     private void FindTiles(Collider2D[] results, out TMP_Text rowText, out TMP_Text colText, out GameObject rowTile, out GameObject colTile) // helper method for updating tile text after mouse drag ends and a shift occurs
     { 
         rowText = null;

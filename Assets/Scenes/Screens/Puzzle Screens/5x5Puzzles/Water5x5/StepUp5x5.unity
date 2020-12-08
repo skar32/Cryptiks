@@ -31621,7 +31621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CHARIOT: III'
+  m_text: STEP UP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c5933cdbef71df4c87bb8d772929726, type: 2}
   m_sharedMaterial: {fileID: -3815203372470095180, guid: 4c5933cdbef71df4c87bb8d772929726, type: 2}
@@ -31648,8 +31648,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

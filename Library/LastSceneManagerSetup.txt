@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Screens/Puzzle Screens/3x3Puzzles/SeekTruth3x3.unity
+- path: Assets/Scenes/Screens/SplashScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
