@@ -19,6 +19,7 @@ public class GridManager : MonoBehaviour
 
     public void Init() // initialize both the column and row grids with the array of letters inputted in the inspector
     {
+        Debug.Log("initializing grid");
         int count = 0;
         foreach (GameObject tile in columnTiles) {
             GameObject tileCanvas = tile.transform.GetChild(0).gameObject;

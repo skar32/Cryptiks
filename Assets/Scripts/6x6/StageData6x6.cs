@@ -11,7 +11,7 @@ public class StageData6x6 : MonoBehaviour
     public GameObject[] hangmanLetters;
     private GridManager gridManagerScript;
 
-    void Awake()
+    void Start()
     {
         gridManagerScript = GetComponent<GridManager>();
         gameHandler = GameObject.FindWithTag("GameHandler").gameObject.GetComponent<PuzzleGameHandler>();
@@ -316,6 +316,11 @@ public class StageData6x6 : MonoBehaviour
             count++;
         }
     }
+
+    // void OnApplicationQuit()
+    // {
+    //     SaveData();
+    // }
 
     private void FindTiles(Collider2D[] results, out TMP_Text rowText, out TMP_Text colText, out GameObject rowTile, out GameObject colTile) // helper method for updating tile text after mouse drag ends and a shift occurs
     { 
